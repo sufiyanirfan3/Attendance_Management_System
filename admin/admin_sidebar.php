@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="admin_sidebar.css">
+    <link rel="stylesheet" href="admin_dashboard.css">
 
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -35,6 +36,7 @@
             <span class="links_name">Courses</span>
           </a>
         </li>
+     
         <li>
           <a href="view_student.php">
             <i class='bx bx-coin-stack' ></i>
@@ -47,6 +49,7 @@
             <span class="links_name">Student Attendence</span>
           </a>
         </li>
+      
         <li>
           <a href="#">
             <i class='bx bx-coin-stack' ></i>
@@ -76,18 +79,7 @@
   </div>
 
 
-  <script>
-   let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".sidebarBtn");
-sidebarBtn.onclick = function() {
-  sidebar.classList.toggle("active");
-  if(sidebar.classList.contains("active")){
-  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
-}else
-  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-}
- </script>
-
+  
 </body>
 </html>
 

@@ -31,7 +31,7 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="student_dashboard.css">
-    <link rel="stylesheet" href="student_sidebar.css">
+    
 </head>
 <body>
     <?php include 'student_sidebar.php';?>

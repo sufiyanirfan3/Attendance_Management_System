@@ -29,7 +29,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
      
       <div class="profile-details">
         <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name"><?php echo $_SESSION['name']?></span>
+        <span class="admin_name"><?php echo $_SESSION['admin_name']?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
@@ -200,7 +200,17 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
       </div>
     </div>
   </section>
-
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
   
 
 </body>

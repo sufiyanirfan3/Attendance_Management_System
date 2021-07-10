@@ -18,7 +18,7 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="student_dashboard.php" class="active">
+          <a href="teacher_dashboard.php" class="active">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>

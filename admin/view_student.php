@@ -30,12 +30,12 @@ if(isset($_GET['del'])){
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Courses</span>
+        <span class="dashboard">Student Details</span>
       </div>
      
       <div class="profile-details">
         <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name"><?php echo $_SESSION['name']?></span>
+        <span class="admin_name"><?php echo $_SESSION['admin_name']?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>

@@ -1,8 +1,8 @@
 <?php
-include 'admin_sidebar.php';
+
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
-    include 'db_connection.php';
+    include '../db_connection.php';
     if(isset($_POST['student'])){
         $student_id = $_POST['student_id'];
         $student_name=$_POST['student_name'];

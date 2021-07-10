@@ -3,15 +3,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 {
     include 'db_connection.php';
     if(isset($_POST['admin'])){
-      $name = $_POST['name'];
+      $admin_id = $_POST['admin_id'];
       $password = $_POST['password'];
-      $sql="SELECT * FROM `admin` WHERE name='$name' AND password='$password'";
+      $sql="SELECT * FROM `admin` WHERE admin_id='$admin_id' AND password='$password'";
       $result=mysqli_query($conn,$sql);
+
+      $row_user=mysqli_fetch_assoc($result);
+      $admin_name=$row_user['admin_name'];
+
       $num=mysqli_num_rows($result);     
       if($num==1){
         session_start();
         $_SESSION['loggedin']=true;
-        $_SESSION['name']=$name;
+        $_SESSION['admin_id']=$admin_id;
+        $_SESSION['admin_name']=$admin_name;
         header('Location:admin/admin_dashboard.php');
         exit;
       }      
@@ -78,7 +83,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
       <form method="post" action="" autocomplete="off">
         <h3 class="title">Admin Login</h3>
         <div class="input-container">
-          <input type="text" name="name" class="input" required />
+          <input type="text" name="admin_id" class="input" required />
           <label for="">Username</label>
           <span>Username</span>
         </div>

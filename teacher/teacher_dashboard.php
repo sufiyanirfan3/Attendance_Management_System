@@ -50,6 +50,7 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
       </div>
     </nav>
     <section>
+  
     <script>
    let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".sidebarBtn");
