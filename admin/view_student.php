@@ -21,7 +21,7 @@ if(isset($_GET['del'])){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="admin_dashboard.css">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="view_student.css">
 
 </head>
 
@@ -39,7 +39,7 @@ if(isset($_GET['del'])){
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
-</section>
+
     <h1>Student Details</h1>
 
     <div class="container">
@@ -117,6 +117,18 @@ if(isset($_GET['del'])){
             </tbody>
         </table>
     </div>
+</section>
+<script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
     <script>
         $(document).ready(function () {
             $('#example').DataTable({

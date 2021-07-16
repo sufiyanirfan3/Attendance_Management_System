@@ -62,6 +62,16 @@
 </head>
 
 <body>
+<?php include "../db_connection.php";
+$select="SELECT student_name FROM student";
+$run=mysqli_query($conn,$select);
+while($row_user=mysqli_fetch_array($run)){
+    $student_name = $row_user['student_name'];
+    $php_framework[] = $student_name;
+}
+print_r($php_framework);
+?>
+
 <form method="post">
    <button type="submit" name="submit" value="submit">SAVE</button>
 </form>
@@ -156,18 +166,27 @@
 
                 })
             }
+
+
+
+
+
+
+
             function loadLabeledImages() {
-                // const labels = ['Sufiyan Irfan','Black Widow', 'Captain America', 'Hawkeye' , 'Jim Rhodes', 'Tony Stark', 'Thor', 'Captain Marvel']
-                const labels = ['Sufiyan Irfan', 'Black Widow', 'Captain America',]
+                
+                const labels = <?php echo '["'.implode('","',$php_framework).'"]' ;?>;
+                // const labels = ['Sufiyan Irfan', 'Black Widow', 'Captain America']
+                console.log(labels);
                 return Promise.all(
                     labels.map(async (label) => {
                         const descriptions = []
-                        for (let i = 1; i <= 2; i++) {
-                            const img = await faceapi.fetchImage(`student_labeled_images/${label}/${i}.jpg`)
+                        // for (let i = 1; i <= 2; i++) {
+                            const img = await faceapi.fetchImage(`../student_images/${label}.jpg`)
                             const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                             // console.log(label + i + JSON.stringify(detections))
                             descriptions.push(detections.descriptor)
-                        }
+                        // }
                         document.body.append(label + ' Faces Loaded | ')
                         return new faceapi.LabeledFaceDescriptors(label, descriptions)
 

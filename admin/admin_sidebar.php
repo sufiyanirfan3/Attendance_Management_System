@@ -31,7 +31,7 @@
           </a>
         </li>
         <li>
-          <a href="courses.php">
+          <a href="acourses.php">
             <i class='bx bx-list-ul' ></i>
             <span class="links_name">Courses</span>
           </a>

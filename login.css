@@ -23,13 +23,13 @@ textarea {
 .contact-form {
   background-color: #1abc9c;
     min-height: 60vh;
-    width: 60vh;
+    width: 65vh;
     border-radius: 8px;
     border-radius: 2rem;
     box-shadow: -2px 2px 15px #46f8da,5px -5px 15px #baf3dd;
     flex-direction: column;
     display:flex;
-    justify-content:center;
+    align-items: center;
 }
 
 form {
@@ -164,8 +164,7 @@ textarea.input {
 }
 
 img{
-    margin-top: 20px;
-  margin-left: 120px;
+  margin-top: 20px;
   width: 150px;
   height: 150px;
 }
@@ -177,11 +176,11 @@ img{
     .contact-form{
         margin-top: 20px;
         margin-bottom: 20px;
-        width: 50vh;
+        width: 60vh;
     }
     img{
         margin-top: 20px;
-        margin-left: 65px;
+       
         width: 150px;
         height: 150px;
       }

@@ -6,12 +6,12 @@ session_start();
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="admin_dashboard.css">
-    <link rel="stylesheet" href="courses.css">
+    <link rel="stylesheet" href="student_dashboard.css">
+    <link rel="stylesheet" href="scourses.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
-<?php include 'admin_sidebar.php';?>
+<?php include 'student_sidebar.php';?>
 <section class="home-section">
     <nav>
       <div class="sidebar-button">
@@ -21,11 +21,11 @@ session_start();
      
       <div class="profile-details">
         <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name"><?php echo $_SESSION['admin_name']?></span>
+        <span class="admin_name"><?php echo $_SESSION['student_name']?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
-</section>
+
     <div class="container">
 		<div class="card">
 			<div class="circle">
@@ -129,6 +129,7 @@ session_start();
 		</div>
         
 	</div>
+	</section>
 	<script>
    let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".sidebarBtn");
