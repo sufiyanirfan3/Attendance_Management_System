@@ -36,8 +36,10 @@
           </a>
         </li>
         <li>
-          <a href="student_mark_attendance.php">
+          <a href="student_mark_attendance1.php">
             <i class='bx bx-coin-stack' ></i>
+            
+            
             <span class="links_name">Mark Attendance</span>
           </a>
         </li>

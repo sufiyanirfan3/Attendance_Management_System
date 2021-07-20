@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         // $sql=rtrim($sql,',')
         $result=mysqli_query($conn,$sql); 
         if($result){
-          move_uploaded_file($temp_name,"student_images/$student_image");
+          move_uploaded_file($temp_name,"../student_images/$student_image");
           header('Location:add_student.php');
           exit;
         }

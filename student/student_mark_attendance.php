@@ -167,22 +167,17 @@ print_r($php_framework);
                 })
             }
 
-
-
-
-
-
-
             function loadLabeledImages() {
                 
-                const labels = <?php echo '["'.implode('","',$php_framework).'"]' ;?>;
+                var labels = <?php echo '["'.implode('","',$php_framework).'"]' ;?>;
                 // const labels = ['Sufiyan Irfan', 'Black Widow', 'Captain America']
                 console.log(labels);
                 return Promise.all(
                     labels.map(async (label) => {
                         const descriptions = []
                         // for (let i = 1; i <= 2; i++) {
-                            const img = await faceapi.fetchImage(`../student_images/${label}.jpg`)
+                            const img = await faceapi.fetchImage(`..//student_images/${label}.jpg`)
+                           
                             const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                             // console.log(label + i + JSON.stringify(detections))
                             descriptions.push(detections.descriptor)

@@ -10,6 +10,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
       $row_user=mysqli_fetch_assoc($result);
       $admin_name=$row_user['admin_name'];
+      $email=$row_user['email'];
+      $phone=$row_user['phone'];
+      $address=$row_user['address'];
 
       $num=mysqli_num_rows($result);     
       if($num==1){
@@ -17,6 +20,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         $_SESSION['loggedin']=true;
         $_SESSION['admin_id']=$admin_id;
         $_SESSION['admin_name']=$admin_name;
+        $_SESSION['email']=$email;
+        $_SESSION['phone']=$phone;
+        $_SESSION['address']=$address;
         header('Location:admin/admin_dashboard.php');
         exit;
       }      
@@ -30,6 +36,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
       $row_user=mysqli_fetch_assoc($result);
       $teacher_name=$row_user['teacher_name'];
+      $teacher_image=$row_user['teacher_image'];
 
       $num=mysqli_num_rows($result);     
       if($num==1){
@@ -37,6 +44,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         $_SESSION['loggedin']=true;
         $_SESSION['teacher_id']=$teacher_id;
         $_SESSION['teacher_name']=$teacher_name;
+        $_SESSION['teacher_image']=$teacher_image;
         header('Location:teacher/teacher_dashboard.php');
         exit;
       } 
@@ -50,6 +58,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
       $row_user=mysqli_fetch_assoc($result);
       $student_name=$row_user['student_name'];
+      $student_image=$row_user['student_image'];
 
 
       $num=mysqli_num_rows($result);     
@@ -58,6 +67,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         $_SESSION['loggedin']=true;
         $_SESSION['student_id']=$student_id;
         $_SESSION['student_name']=$student_name;
+        $_SESSION['student_image']=$student_image;
         header('Location:student/student_dashboard.php');
         exit;
       } 
@@ -79,7 +89,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 <body>
   <div class="container">
     <div class="contact-form">
-      <img src="admin.png">
+      <div class="profile-login-img"><img src="admin.png"></div>
       <form method="post" action="" autocomplete="off">
         <h3 class="title">Admin Login</h3>
         <div class="input-container">
@@ -96,7 +106,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
       </form>
     </div>
     <div class="contact-form">
-      <img src="teacher.png">
+      <div class="profile-login-img"><img src="teacher.png"></div>
+      
       <form method="post" action="" autocomplete="off">
         <h3 class="title">Teacher Login</h3>
         <div class="input-container">
@@ -113,7 +124,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
       </form>
     </div>
     <div class="contact-form">
-      <img src="student.png">
+      <div class="profile-login-img"><img src="student.png"></div>
       <form method="post" action="" autocomplete="off">
         <h3 class="title">Student Login</h3>
         <div class="input-container">

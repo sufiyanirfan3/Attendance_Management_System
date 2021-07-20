@@ -21,3 +21,5 @@ print_r($php_framework);
 ?>
 
 var labels = <?php echo '["'.implode('","',$php_framework).'"]'?>
+
+const labels = <?php echo '["'.implode('","',$php_framework).'"]' ;?>;

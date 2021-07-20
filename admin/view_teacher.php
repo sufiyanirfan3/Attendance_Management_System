@@ -4,7 +4,7 @@ include 'admin_sidebar.php';
 include '../db_connection.php';
 if(isset($_GET['del'])){
     $del_id=$_GET['del'];
-    $delete="DELETE from student where student_id='$del_id'";
+    $delete="DELETE from teacher where teacher_id='$del_id'";
     $run_delete=mysqli_query($conn,$delete);
 }
 ?>
@@ -21,7 +21,7 @@ if(isset($_GET['del'])){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="admin_dashboard.css">
-    <link rel="stylesheet" href="view_student.css">
+    <link rel="stylesheet" href="view_teacher.css">
 
 </head>
 
@@ -30,7 +30,7 @@ if(isset($_GET['del'])){
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Student Details</span>
+        <span class="dashboard">Teacher Details</span>
       </div>
      
       <div class="profile-details">
@@ -47,29 +47,29 @@ if(isset($_GET['del'])){
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Student ID</th>
-                    <th>Student Name</th>
+                    <th>Teacher ID</th>
+                    <th>Teacher Name</th>
                     <th>Image</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>Courses Enrolled</th>
+                    <th>Courses Teaching</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 include '../db_connection.php';
-                $select="SELECT * FROM student";
+                $select="SELECT * FROM teacher";
                 $run=mysqli_query($conn,$select);
                 while($row_user=mysqli_fetch_array($run)){
                     $id=$row_user['id'];
-                    $student_id = $row_user['student_id'];
-                    $student_name=$row_user['student_name'];
-                    $student_image=$row_user['student_image'];
+                    $teacher_id = $row_user['teacher_id'];
+                    $teacher_name=$row_user['teacher_name'];
+                    $teacher_image=$row_user['teacher_image'];
         
                     $email=$row_user['email'];
                     $phone=$row_user['phone'];
-                    $courses_enrolled=$row_user['courses_enrolled'];
+                    $courses_teaching=$row_user['courses_teaching'];
 
                     
                 ?>
@@ -79,22 +79,23 @@ if(isset($_GET['del'])){
                         <?php echo $id?>
                     </td>
                     <td>
-                        <?php echo $student_id?>
+                        <?php echo $teacher_id?>
                     </td>
                     <td>
-                        <?php echo $student_name?>
+                        <?php echo $teacher_name?>
                     </td>
-                    <td><img src="../student_images/<?php echo $student_image;?>" height="100px" width="100px"></td>
+                    <td><img src="../teacher_images/<?php echo $teacher_image;?>" height="100px" width="100px"></td>
                   
-                    <td style="background-color:aqua;">
-                        <?php echo $email?>
+                    <td>
+                        <span class="ee" style="background-color:aqua;"><?php echo $email?></span>
+                        
                     </td>
                     <td>
                         <?php echo $phone?>
                     </td>
                     <td>
                         <?php 
-                    $exp=explode(",",$courses_enrolled);
+                    $exp=explode(",",$courses_teaching);
                    
                     for($i=0;$i<count($exp);$i++)
                         echo $exp[$i]."<br>";
@@ -102,12 +103,12 @@ if(isset($_GET['del'])){
                     ?>
                     </td>
                     <td>
-                    <a href="edit_student.php?student_id=<?php echo $student_id;?>">
+                    <a href="edit_teacher.php?teacher_id=<?php echo $teacher_id;?>">
                     <input type="submit" name="Edit" value="Edit" class="btn" />
                     <a>
                     </td>
                     <td>
-                    <a href="view_student.php?del=<?php echo $student_id;?>">
+                    <a href="view_teacher.php?del=<?php echo $teacher_id;?>">
                     <input type="submit" name="Delete" value="Delete" class="btn" />
                     <a>
                     </td>

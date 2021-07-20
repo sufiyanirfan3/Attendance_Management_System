@@ -25,7 +25,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="admin_profile.php">
             <i class='bx bx-box' ></i>
             <span class="links_name">Profile</span>
           </a>
@@ -51,7 +51,7 @@
         </li>
       
         <li>
-          <a href="#">
+          <a href="view_teacher.php">
             <i class='bx bx-coin-stack' ></i>
             <span class="links_name">Teacher</span>
           </a>

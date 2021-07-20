@@ -44,7 +44,7 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
       </div>
      
       <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
+      <img src="../teacher_images/<?php echo $_SESSION['teacher_image'];?>">
         <span class="admin_name"><?php echo $_SESSION['teacher_name'];?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>

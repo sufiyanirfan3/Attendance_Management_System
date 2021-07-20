@@ -1,6 +1,6 @@
 
 <?php
-    include 'db_connection.php';
+    include '../db_connection.php';
         $student_id = $_POST['student_id'];
         $estudent_name=$_POST['student_name'];
 
@@ -30,7 +30,7 @@
         
         if($run_update){
             echo "Data has been updated successfully";
-            move_uploaded_file($etemp_name,"student_images/$estudent_image");
+            move_uploaded_file($etemp_name,"../student_images/$estudent_image");
             header('Location:view_student.php');
         }
         else{
