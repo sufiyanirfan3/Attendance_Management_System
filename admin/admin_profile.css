@@ -201,15 +201,36 @@ table, th, td {
 }
 @media(max-width:470px){
     th{
-        font-size: 8px;
+        font-size: 12px;
     }
     table,td {
         
-        font-size: 8px;
+        font-size: 12px;
         }
     .container .card2{
         padding: 0;
         
     }
-
+}
+@media(max-width:410px){
+    table, th, td {
+        line-height: 50px;
+        padding:3px;
+        }
+    th{
+        font-size: 9px;
+    }
+    td{
+        text-align: left;
+    }
+    table,td {
+            
+        font-size: 9px;
+    }
+    .container .card2{
+        height: 40vh;
+        margin: 0;
+        padding: 0;        
+    }
+    
 }
