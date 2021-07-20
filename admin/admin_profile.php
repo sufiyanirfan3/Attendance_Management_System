@@ -15,7 +15,7 @@ include 'admin_sidebar.php';
   <link rel="stylesheet" href="admin_profile.css">
 </head>
 
-<body>
+<body>             
   <section class="home-section">
     <nav>
       <div class="sidebar-button">
@@ -82,21 +82,27 @@ include 'admin_sidebar.php';
 
       </div>
       <div class="card3">
-        <a href="#"><img class="icons" src="../socialmedia_icons/facebook_logo.png"></a>
+        <a href="#"><img class="icons" src="../social-media-regular-icons/globe.svg"></a><span class="icons-name">Website</span>
         <hr>
-        <a href="#"><img class="icons" src="../socialmedia_icons/twitter_logo.png"></a>
+        <a href="#"><img class="icons" src="../social-media-regular-icons/github.svg"></a><span class="icons-name">Github</span>
         <hr>
-        <a href="#"><img class="icons" src="../socialmedia_icons/instagram_logo.png"></a>
+        <a href="#"><img class="icons" src="../social-media-regular-icons/twitter.svg"></a><span class="icons-name">Twitter</span>
         <hr>
-        <a href="#"><img class="icons" src="../socialmedia_icons/linkedin_logo.png"></a>
+        <a href="#"><img class="icons" src="../social-media-regular-icons/instagram.svg"></a><span class="icons-name">Instagram</span>
         <hr>
+        <a href="#"><img class="icons" src="../social-media-regular-icons/facebook.svg"></a><span class="icons-name">Facebook</span>
+        
       </div>
       <div class="card4">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam dignissimos perferendis vitae aliquid,
-          doloribus corrupti et delectus nemo, error aspernatur voluptates optio velit architecto unde temporibus vero
-          amet necessitatibus ipsam.
-          Labore recusandae eligendi neque odit doloribus eaque nihil ullam ex odio accusamus sit nesciunt alias laborum
-          ratione, itaque eum dolore qui dolorum corrupti quis vitae quisquam molestiae quasi enim.card4</p>
+       <h3>Skills</h3>
+       <label>Communication</label>
+       <progress min="0" max="100" value="90"></progress>
+       <label>Responsibility</label>
+       <progress min="0" max="100" value="75"></progress>
+       <label>Time Management</label>
+       <progress min="0" max="100" value="85"></progress>
+       <label>Multi tasking</label>
+       <progress min="0" max="100" value="65"></progress>
       </div>
 
     </div>
