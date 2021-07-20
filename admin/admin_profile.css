@@ -168,7 +168,7 @@ table, th, td {
     {   
         margin-left: 5px;
         padding: 5px;
-        width: 80vw;
+        width: 90vw;
         height: 50vh;       
     }
     .container .card3
@@ -181,12 +181,35 @@ table, th, td {
     {   
         margin-left: 5px;
         padding: 5px;
-        width: 80vw;
+        width: 90vw;
         height: 50vh;  
            
     }
 }
-@media(max-width:800px){
+@media(max-width:530px){
+    th{
+        font-size: 14px;
+    }
+    table,td {
+        font-size: 14px;
+        }
+    .container .card2{
+        padding: 0;
+        
+    }
 
+}
+@media(max-width:470px){
+    th{
+        font-size: 8px;
+    }
+    table,td {
+        
+        font-size: 8px;
+        }
+    .container .card2{
+        padding: 0;
+        
+    }
 
 }
