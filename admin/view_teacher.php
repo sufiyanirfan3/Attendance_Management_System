@@ -6,6 +6,7 @@ if(isset($_GET['del'])){
     $del_id=$_GET['del'];
     $delete="DELETE from teacher where teacher_id='$del_id'";
     $run_delete=mysqli_query($conn,$delete);
+    header('Location:view_teacher.php');
 }
 ?>
 <!DOCTYPE html>
@@ -107,13 +108,17 @@ if(isset($_GET['del'])){
 
                     <td>
                     <a href="edit_teacher.php?teacher_id=<?php echo $teacher_id;?>">
-                    <input type="submit" name="Edit" value="Edit" class="btn" />
+                    <input type="image" name="Edit"
+                    src="../edit.svg" width=25px height=25px>
                     <a>
+                    
                     <a href="view_teacher.php?del=<?php echo $teacher_id;?>">
-                    <input type="submit" name="Delete" value="Delete" class="btn" />
+                    <input type="image" name="Delete"
+                    src="../trash.svg" width=25px height=25px>
                     <a>
                     </td>
-    
+
+                    
                 </tr>
                 <?php } ?>
             </tbody>

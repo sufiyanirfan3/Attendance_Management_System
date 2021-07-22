@@ -2,6 +2,7 @@
     margin:0;
     padding: 0;
 }
+
 .container{
     margin-right:2vw;
     margin-left:2vw;
@@ -10,4 +11,9 @@
 }
 td {
     text-align: center;
+
   }
+td a{
+    text-decoration: none;
+}
+
