@@ -16,7 +16,7 @@ if(isset($_GET['del'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
@@ -86,8 +86,10 @@ if(isset($_GET['del'])){
                     </td>
                     <td><img src="../student_images/<?php echo $student_image;?>" height="100px" width="100px"></td>
                   
-                    <td style="background-color:aqua;">
+                    <td>
+                        
                         <?php echo $email?>
+                  
                     </td>
                     <td>
                         <?php echo $phone?>
@@ -105,12 +107,11 @@ if(isset($_GET['del'])){
                     <a href="edit_student.php?student_id=<?php echo $student_id;?>">
                     <input type="submit" name="Edit" value="Edit" class="btn" />
                     <a>
-                    </td>
-                    <td>
                     <a href="view_student.php?del=<?php echo $student_id;?>">
                     <input type="submit" name="Delete" value="Delete" class="btn" />
                     <a>
                     </td>
+               
 
                 </tr>
                 <?php } ?>

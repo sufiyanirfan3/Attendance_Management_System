@@ -14,7 +14,7 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
   include '../db_connection.php';
   $teacher_id=$_SESSION['teacher_id'];
   $teacher_name=$_SESSION['teacher_name'];
-  $sql="INSERT INTO `teacher_attendance` (`teacher_id`, `teacher_name`, `attendance_date`) VALUES ('$teacher_id','$teacher_name', CURRENT_DATE());";
+  $sql="INSERT INTO `teacher_attendance` (`teacher_id`, `teacher_name`,`attendance_status`, `attendance_date`) VALUES ('$teacher_id','$teacher_name','Present', CURRENT_DATE());";
   $result=mysqli_query($conn,$sql);
 
     unlink("teacher_attendance_record/".$a.".txt");

@@ -44,7 +44,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="view_student_attendance.php">
             <i class='bx bx-pie-chart-alt-2' ></i>
             <span class="links_name">Student Attendence</span>
           </a>

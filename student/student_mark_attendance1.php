@@ -3,10 +3,11 @@
 session_start();
 include "../db_connection.php";
 $student_id=$_SESSION['student_id'];
-$select="SELECT attendance_date FROM student_attendance WHERE student_id='$student_id'";
+$select="SELECT attendance_date,attendance_status FROM student_attendance WHERE student_id='$student_id'";
 $run=mysqli_query($conn,$select);
 while($row_user=mysqli_fetch_array($run)){
     $date= $row_user['attendance_date'];
+    $status= $row_user['attendance_status'];
 }
 ?>
 
@@ -24,7 +25,7 @@ function open_script(){
 } 
 </script> 
 
-<input type="button" value="Mark Attendance" <?php if ($date == date("Y-m-d")){ ?> disabled <?php   } ?> onclick="open_script()" />
+<input type="button" value="Mark Attendance" <?php if ($date == date("Y-m-d") && $status=="Present"){ ?> disabled <?php   } ?> onclick="open_script()" />
 
 
 
