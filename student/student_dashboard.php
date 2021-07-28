@@ -6,6 +6,27 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 }
 ?>
 <?php
+    include '../db_connection.php';
+    $select="SELECT * FROM student";
+    $run=mysqli_query($conn,$select);
+    while($row_user=mysqli_fetch_array($run)){
+        
+        $student_id = $row_user['student_id'];
+        $student_name = $row_user['student_name'];
+        $date=date("Y-m-d");
+        $select1="SELECT * FROM student_attendance where student_id='$student_id' and attendance_date='$date'";
+        $run1=mysqli_query($conn,$select1);
+        
+        
+        if($run1->num_rows==0){
+            $sql="INSERT INTO `student_attendance` (`student_id`, `student_name`,`attendance_status`, `attendance_date`) VALUES ('$student_id','$student_name','Absent', CURRENT_DATE());";
+            $result=mysqli_query($conn,$sql);
+            
+        }
+    }         
+
+?>
+<?php
 
 $a=$_SESSION['student_name'];
 fopen("student_attendance_record/".$a.".txt", "a") or die("Unable to open file!");  
@@ -20,7 +41,7 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
   $result=mysqli_query($conn,$sql);
 
     unlink("student_attendance_record/".$a.".txt");
-    echo $a." attendance has been marked successfully";
+    include '../alert.php';
     header("Refresh:5");
 }
 ?>
@@ -36,6 +57,7 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
     
 </head>
 <body>
+    
     <?php include 'student_sidebar.php';?>
     
     <section class="home-section">
@@ -52,6 +74,7 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
       </div>
     </nav>
     <section>
+    
     <script>
    let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".sidebarBtn");

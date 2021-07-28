@@ -2,6 +2,7 @@
     margin:0;
     padding: 0;
 }
+
 .container{
     margin-right:2vw;
     margin-left:2vw;
@@ -14,9 +15,8 @@ th{
 td {
     text-align: center;
     padding-bottom: 1vh;
-
-
   }
 td a{
     text-decoration: none;
 }
+

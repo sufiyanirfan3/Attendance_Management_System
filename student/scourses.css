@@ -135,3 +135,6 @@ img{
     height: 120px;
     filter: invert(1);
 }
+#profile-img{
+	filter: invert(0);
+}

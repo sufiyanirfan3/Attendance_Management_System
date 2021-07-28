@@ -1,23 +1,73 @@
 <?php
 session_start();
+include '../db_connection.php';
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     header('location:../login.php');
     exit;
 }
 ?>
-
+<?php
+    $select="SELECT * FROM student";
+    $run=mysqli_query($conn,$select);
+    while($row_user=mysqli_fetch_array($run)){
+        
+        $student_id = $row_user['student_id'];
+        $student_name = $row_user['student_name'];
+        $date=date("Y-m-d");
+        $select1="SELECT * FROM student_attendance where student_id='$student_id' and attendance_date='$date'";
+        $run1=mysqli_query($conn,$select1);
+        
+        
+        if($run1->num_rows==0){
+            $sql="INSERT INTO `student_attendance` (`student_id`, `student_name`,`attendance_status`, `attendance_date`) VALUES ('$student_id','$student_name','Absent', CURRENT_DATE());";
+            $result=mysqli_query($conn,$sql);
+   
+        }
+    }         
+?>
+<?php
+    $select2="SELECT * FROM teacher";
+    $run2=mysqli_query($conn,$select2);
+    while($row_user=mysqli_fetch_array($run2)){
+        
+        $teacher_id = $row_user['teacher_id'];
+        $teacher_name = $row_user['teacher_name'];
+        $date=date("Y-m-d");
+        $select3="SELECT * FROM teacher_attendance where teacher_id='$teacher_id' and attendance_date='$date'";
+        $run3=mysqli_query($conn,$select3);
+        
+        if($run3->num_rows==0){
+            $sql="INSERT INTO `teacher_attendance` (`teacher_id`, `teacher_name`,`attendance_status`, `attendance_date`) VALUES ('$teacher_id','$teacher_name','Absent', CURRENT_DATE());";
+            $result=mysqli_query($conn,$sql);
+        
+        }
+    }         
+?>
+<?php
+ 
+ $dataPoints = array( 
+   array("y" => 9, "label" => "Students","color"=> "LightSeaGreen" ),
+   array("y" => 6, "label" => "Teachers" ,"color"=> "RoyalBlue"),
+   array("y" => 10, "label" => "Courses","color"=>"#ffa703" ),
+   
+ );
+  
+ ?>
 
 <!DOCTYPE html>
 <!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
-    <link rel="stylesheet" href="admin_dashboard.css">
-    <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+
+<head>
+  <meta charset="UTF-8">
+  <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+  <link rel="stylesheet" href="admin_dashboard.css">
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
 <body>
   <?php include 'admin_sidebar.php';?>
   <section class="home-section">
@@ -26,196 +76,194 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         <i class='bx bx-menu sidebarBtn'></i>
         <span class="dashboard">Admin Dashboard</span>
       </div>
-     
+
       <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name"><?php echo $_SESSION['admin_name']?></span>
-        <i class='bx bx-chevron-down' ></i>
+        <img src="Sufiyan Irfan.jpg" alt="">
+        <span class="admin_name">
+          <?php echo $_SESSION['admin_name']?>
+        </span>
+        <i class='bx bx-chevron-down'></i>
       </div>
     </nav>
 
-    <div class="home-content">
-      <div class="overview-boxes">
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Total Order</div>
-            <div class="number">40,876</div>
-            <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
-            </div>
-          </div>
-          <i class='bx bx-cart-alt cart'></i>
+    <div class="big-box">
+      <div class="box1">
+        <div class="right-box1">
+        <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
         </div>
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Total Sales</div>
-            <div class="number">38,876</div>
-            <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
-            </div>
-          </div>
-          <i class='bx bxs-cart-add cart two' ></i>
-        </div>
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Total Profit</div>
-            <div class="number">$12,876</div>
-            <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
-            </div>
-          </div>
-          <i class='bx bx-cart cart three' ></i>
-        </div>
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Total Return</div>
-            <div class="number">11,086</div>
-            <div class="indicator">
-              <i class='bx bx-down-arrow-alt down'></i>
-              <span class="text">Down From Today</span>
-            </div>
-          </div>
-          <i class='bx bxs-cart-download cart four' ></i>
+        <div class="left-box1">
+            <h4>Admins</h4>
+            <h1>
+            <?php
+            $sql="SELECT COUNT(admin_id) from `admin` ";
+            $run=mysqli_query($conn,$sql);
+            while($row_user=mysqli_fetch_array($run)){
+              echo $row_user['COUNT(admin_id)'];
+            }
+            ?>
+            </h1>
         </div>
       </div>
-
-      <div class="sales-boxes">
-        <div class="recent-sales box">
-          <div class="title">Recent Sales</div>
-          <div class="sales-details">
-            <ul class="details">
-              <li class="topic">Date</li>
-              <li><a href="#">02 Jan 2021</a></li>
-              <li><a href="#">02 Jan 2021</a></li>
-              <li><a href="#">02 Jan 2021</a></li>
-              <li><a href="#">02 Jan 2021</a></li>
-              <li><a href="#">02 Jan 2021</a></li>
-              <li><a href="#">02 Jan 2021</a></li>
-              <li><a href="#">02 Jan 2021</a></li>
-            </ul>
-            <ul class="details">
-            <li class="topic">Customer</li>
-            <li><a href="#">Alex Doe</a></li>
-            <li><a href="#">David Mart</a></li>
-            <li><a href="#">Roe Parter</a></li>
-            <li><a href="#">Diana Penty</a></li>
-            <li><a href="#">Martin Paw</a></li>
-            <li><a href="#">Doe Alex</a></li>
-            <li><a href="#">Aiana Lexa</a></li>
-            <li><a href="#">Rexel Mags</a></li>
-             <li><a href="#">Tiana Loths</a></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">Sales</li>
-            <li><a href="#">Delivered</a></li>
-            <li><a href="#">Pending</a></li>
-            <li><a href="#">Returned</a></li>
-            <li><a href="#">Delivered</a></li>
-            <li><a href="#">Pending</a></li>
-            <li><a href="#">Returned</a></li>
-            <li><a href="#">Delivered</a></li>
-             <li><a href="#">Pending</a></li>
-            <li><a href="#">Delivered</a></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">Total</li>
-            <li><a href="#">$204.98</a></li>
-            <li><a href="#">$24.55</a></li>
-            <li><a href="#">$25.88</a></li>
-            <li><a href="#">$170.66</a></li>
-            <li><a href="#">$56.56</a></li>
-            <li><a href="#">$44.95</a></li>
-            <li><a href="#">$67.33</a></li>
-             <li><a href="#">$23.53</a></li>
-             <li><a href="#">$46.52</a></li>
-          </ul>
-          </div>
-          <div class="button">
-            <a href="#">See All</a>
-          </div>
+      <div class="box1">
+        <div class="right-box1">
+        <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
         </div>
-        <div class="top-sales box">
-          <div class="title">Top Seling Product</div>
-          <ul class="top-sales-details">
-            <li>
-            <a href="#">
-              <!--<img src="images/sunglasses.jpg" alt="">-->
-              <span class="product">Vuitton Sunglasses</span>
-            </a>
-            <span class="price">$1107</span>
-          </li>
-          <li>
-            <a href="#">
-               <!--<img src="images/jeans.jpg" alt="">-->
-              <span class="product">Hourglass Jeans </span>
-            </a>
-            <span class="price">$1567</span>
-          </li>
-          <li>
-            <a href="#">
-             <!-- <img src="images/nike.jpg" alt="">-->
-              <span class="product">Nike Sport Shoe</span>
-            </a>
-            <span class="price">$1234</span>
-          </li>
-          <li>
-            <a href="#">
-              <!--<img src="images/scarves.jpg" alt="">-->
-              <span class="product">Hermes Silk Scarves.</span>
-            </a>
-            <span class="price">$2312</span>
-          </li>
-          <li>
-            <a href="#">
-              <!--<img src="images/blueBag.jpg" alt="">-->
-              <span class="product">Succi Ladies Bag</span>
-            </a>
-            <span class="price">$1456</span>
-          </li>
-          <li>
-            <a href="#">
-              <!--<img src="images/bag.jpg" alt="">-->
-              <span class="product">Gucci Womens's Bags</span>
-            </a>
-            <span class="price">$2345</span>
-          <li>
-            <a href="#">
-              <!--<img src="images/addidas.jpg" alt="">-->
-              <span class="product">Addidas Running Shoe</span>
-            </a>
-            <span class="price">$2345</span>
-          </li>
-<li>
-            <a href="#">
-             <!--<img src="images/shirt.jpg" alt="">-->
-              <span class="product">Bilack Wear's Shirt</span>
-            </a>
-            <span class="price">$1245</span>
-          </li>
-          </ul>
+        <div class="left-box1">
+      
+        <h4>Students</h4>
+        <h1><?php
+            $sql="SELECT COUNT(student_id) from student";
+            $run=mysqli_query($conn,$sql);
+            while($row_user=mysqli_fetch_array($run)){
+              echo $row_user['COUNT(student_id)'];
+            }
+            ?></h1>
+        </div>
+      </div>
+      <div class="box1">
+        <div class="right-box1">
+        <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        </div>
+        <div class="left-box1">
+        <h4>Teachers</h4>
+        <h1><?php
+            $sql="SELECT COUNT(teacher_id) from teacher";
+            $run=mysqli_query($conn,$sql);
+            while($row_user=mysqli_fetch_array($run)){
+              echo $row_user['COUNT(teacher_id)'];
+            }
+            ?></h1>
+        </div>
+      </div>
+      <div class="box1">
+        <div class="right-box1">
+        <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        </div>
+        <div class="left-box1">
+        <h4>Courses</h4>
+        <h1><?php
+            $sql="SELECT COUNT(course_id) from courses";
+            $run=mysqli_query($conn,$sql);
+            while($row_user=mysqli_fetch_array($run)){
+              echo $row_user['COUNT(course_id)'];
+            }
+            ?></h1>
         </div>
       </div>
     </div>
+
+    <div class="second-box">
+    <div class="column-box" id="columnContainer">
+    </div>
+    <div class="area-box" id="areaContainer">
+    </div>
+    <div class="pie-box" id="pieContainer">
+    </div>
+    </div>
   </section>
   <script>
-   let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".sidebarBtn");
-sidebarBtn.onclick = function() {
-  sidebar.classList.toggle("active");
-  if(sidebar.classList.contains("active")){
-  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
-}else
-  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function () {
+      sidebar.classList.toggle("active");
+      if (sidebar.classList.contains("active")) {
+        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else
+        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+  </script>
+<script>
+var chart = new CanvasJS.Chart("columnContainer", {
+	animationEnabled: true,
+  subtitles: [{
+		text: "Attendee",
+    fontSize: 18
+	}],
+
+     axisX:{
+        labelFontColor: "LightSeaGreen",
+    },
+  axisY:{
+        gridThickness: 0,
+        labelFontColor: "LightSeaGreen",
+      },
+	data: [{
+		type: "column",
+		yValueFormatString: "#",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+</script>
+
+<script type="text/javascript">
+window.onload = function () {
+    var chart = new CanvasJS.Chart("areaContainer",
+    {
+	
+    axisX:{
+		valueFormatString: "DD-MMM" ,
+				interval: 5,
+				intervalType: "day",
+				labelAngle: -50,
+				labelFontColor: "LightSeaGreen",
+        gridThickness: 0
+    },
+	axisY:{
+        labelFontColor: "LightSeaGreen",
+        gridThickness: 0
+    },
+
+    data: [
+    {        
+        type: "area",
+		color:"RoyalBlue",
+        dataPoints: [//array
+        { x: new Date(2021, 07, 1), y: 4},
+        { x: new Date(2021, 07, 3), y: 3},
+        { x: new Date(2021, 07, 5), y: 5},
+        { x: new Date(2021, 07, 7), y: 4},
+        { x: new Date(2021, 07, 11), y: 8},
+        { x: new Date(2021, 07, 13), y: 4},
+        { x: new Date(2021, 07, 20), y: 6},
+        { x: new Date(2021, 07, 21), y: 10},
+        { x: new Date(2021, 07, 25), y: 9},
+        { x: new Date(2021, 07, 27), y: 4}
+
+        ]
+    }
+    ]
+});
+
+    chart.render();
 }
- </script>
+</script>
+
+<script type="text/javascript">
+
+    var chart1 = new CanvasJS.Chart("pieContainer",
+    {
+      legend: {
+        horizontalAlign: "right",
+        verticalAlign: "center"
+      },
+      data: [
+      {
+       color: "LightSeaGreen",
+       indexLabelPlacement: "outside",
+       showInLegend: true,
+       type: "doughnut",
+       dataPoints: [
+       {  y: 11, legendText: "Absent", color: "RoyalBlue" },
+       {  y: 89, legendText: "Present", color: "#ffa703" }
+       ]
+     }
+     ]
+   });
+
+    chart1.render();
   
-
+  </script>
 </body>
+
 </html>
-
-
-
-

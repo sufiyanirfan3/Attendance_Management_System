@@ -23,7 +23,7 @@ session_start();
       </div>
      
       <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
+	  	<img id="profile-img" src="../teacher_images/<?php echo $_SESSION['teacher_image'];?>">
         <span class="admin_name"><?php echo $_SESSION['teacher_name']?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>

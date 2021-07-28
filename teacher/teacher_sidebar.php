@@ -24,7 +24,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="teacher_profile.php">
             <i class='bx bx-box' ></i>
             <span class="links_name">Profile</span>
           </a>
@@ -42,19 +42,13 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="view_attendance.php">
             <i class='bx bx-pie-chart-alt-2' ></i>
             <span class="links_name">View Attendence</span>
           </a>
         </li>
         <li>
-          <a href="#">
-            <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="links_name">Student Attendence</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
+          <a href="teacher_change_password.php">
             <i class='bx bx-coin-stack' ></i>
             <span class="links_name">Change Password</span>
           </a>

@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
-    <link rel="stylesheet" href="admin_sidebar.css">
+    <link rel="stylesheet" href="admin_sidebar1.css">
     <link rel="stylesheet" href="admin_dashboard.css">
 
     <!-- Boxicons CDN Link -->
@@ -26,7 +26,7 @@
         </li>
         <li>
           <a href="admin_profile.php">
-            <i class='bx bx-box' ></i>
+            <i class='bx bx-' ></i>
             <span class="links_name">Profile</span>
           </a>
         </li>
@@ -57,13 +57,13 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="view_teacher_attendance.php">
             <i class='bx bx-book-alt' ></i>
             <span class="links_name">Teacher Attendence</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="admin_change_password.php">
             <i class='bx bx-user' ></i>
             <span class="links_name">Change Password</span>
           </a>

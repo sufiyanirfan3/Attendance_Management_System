@@ -1,4 +1,13 @@
 <?php
+session_start();
+include '../db_connection.php';
+include 'admin_sidebar.php';
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+    header('location:../login.php');
+    exit;
+}
+?>
+<?php
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
@@ -36,10 +45,26 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="add_student.css">
+    <link rel="stylesheet" href="admin_dashboard.css">
 
 </head>
 
 <body>
+<section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Add Employee</span>
+      </div>
+
+      <div class="profile-details">
+      <img src="Zunaira Hasnain.jpg">
+        <span class="admin_name">
+          <?php echo $_SESSION['admin_name']?>
+        </span>
+        <i class='bx bx-chevron-down'></i>
+      </div>
+    </nav>
     <div class="container">
         <div class="title">
             Add Student
@@ -149,7 +174,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
         
     </div>
-   
+</section>
+<script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function () {
+      sidebar.classList.toggle("active");
+      if (sidebar.classList.contains("active")) {
+        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else
+        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+  </script>
 </body>
 
 </html>

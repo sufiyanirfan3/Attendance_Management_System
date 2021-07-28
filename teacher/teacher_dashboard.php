@@ -6,6 +6,27 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 }
 ?>
 <?php
+    include '../db_connection.php';
+    
+    $select="SELECT * FROM teacher";
+    $run=mysqli_query($conn,$select);
+    while($row_user=mysqli_fetch_array($run)){
+        
+        $teacher_id = $row_user['teacher_id'];
+        $teacher_name = $row_user['teacher_name'];
+        $date=date("Y-m-d");
+        $select1="SELECT * FROM teacher_attendance where teacher_id='$teacher_id' and attendance_date='$date'";
+        $run1=mysqli_query($conn,$select1);
+        
+        
+        if($run1->num_rows==0){
+            $sql="INSERT INTO `teacher_attendance` (`teacher_id`, `teacher_name`,`attendance_status`, `attendance_date`) VALUES ('$teacher_id','$teacher_name','Absent', CURRENT_DATE());";
+            $result=mysqli_query($conn,$sql);
+         
+        }
+    }         
+?>
+<?php
 
 $a=$_SESSION['teacher_name'];
 fopen("teacher_attendance_record/".$a.".txt", "a") or die("Unable to open file!");  
@@ -14,11 +35,12 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
   include '../db_connection.php';
   $teacher_id=$_SESSION['teacher_id'];
   $teacher_name=$_SESSION['teacher_name'];
-  $sql="INSERT INTO `teacher_attendance` (`teacher_id`, `teacher_name`,`attendance_status`, `attendance_date`) VALUES ('$teacher_id','$teacher_name','Present', CURRENT_DATE());";
+
+  $sql="UPDATE `teacher_attendance` SET `teacher_id`='$teacher_id', `teacher_name`='$teacher_name',`attendance_status`='Present', `attendance_date`=CURRENT_DATE() where `teacher_id`='$teacher_id'" ;
   $result=mysqli_query($conn,$sql);
 
     unlink("teacher_attendance_record/".$a.".txt");
-    echo $a." attendance has been marked successfully";
+    include '../alert.php';
     header("Refresh:5");
 }
 ?>
