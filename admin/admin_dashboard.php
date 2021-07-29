@@ -44,11 +44,28 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     }         
 ?>
 <?php
- 
+$a='';
+ $sql="SELECT COUNT(student_id) from `student` ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $a.=$row_user['COUNT(student_id)'];
+ }
+ $b='';
+ $sql="SELECT COUNT(teacher_id) from `teacher` ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $b.=$row_user['COUNT(teacher_id)'];
+ }
+ $c='';
+ $sql="SELECT COUNT(course_id) from `courses` ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $c.=$row_user['COUNT(course_id)'];
+ }
  $dataPoints = array( 
-   array("y" => 9, "label" => "Students","color"=> "LightSeaGreen" ),
-   array("y" => 6, "label" => "Teachers" ,"color"=> "RoyalBlue"),
-   array("y" => 10, "label" => "Courses","color"=>"#ffa703" ),
+   array("y" => $a, "label" => "Students","color"=> "LightSeaGreen" ),
+   array("y" => $b, "label" => "Teachers" ,"color"=> "RoyalBlue"),
+   array("y" => $c, "label" => "Courses","color"=>"#ffa703" ),
    
  );
   
@@ -112,11 +129,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
       
         <h4>Students</h4>
         <h1><?php
-            $sql="SELECT COUNT(student_id) from student";
-            $run=mysqli_query($conn,$sql);
-            while($row_user=mysqli_fetch_array($run)){
-              echo $row_user['COUNT(student_id)'];
-            }
+            echo $a;
+           
             ?></h1>
         </div>
       </div>
@@ -127,11 +141,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         <div class="left-box1">
         <h4>Teachers</h4>
         <h1><?php
-            $sql="SELECT COUNT(teacher_id) from teacher";
-            $run=mysqli_query($conn,$sql);
-            while($row_user=mysqli_fetch_array($run)){
-              echo $row_user['COUNT(teacher_id)'];
-            }
+            echo $b;
             ?></h1>
         </div>
       </div>
@@ -142,11 +152,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         <div class="left-box1">
         <h4>Courses</h4>
         <h1><?php
-            $sql="SELECT COUNT(course_id) from courses";
-            $run=mysqli_query($conn,$sql);
-            while($row_user=mysqli_fetch_array($run)){
-              echo $row_user['COUNT(course_id)'];
-            }
+            echo $c;
             ?></h1>
         </div>
       </div>
@@ -220,15 +226,16 @@ window.onload = function () {
 		color:"RoyalBlue",
         dataPoints: [//array
         { x: new Date(2021, 07, 1), y: 4},
-        { x: new Date(2021, 07, 3), y: 3},
-        { x: new Date(2021, 07, 5), y: 5},
-        { x: new Date(2021, 07, 7), y: 4},
-        { x: new Date(2021, 07, 11), y: 8},
-        { x: new Date(2021, 07, 13), y: 4},
-        { x: new Date(2021, 07, 20), y: 6},
-        { x: new Date(2021, 07, 21), y: 10},
+        { x: new Date(2021, 07, 4), y: 3},
+        { x: new Date(2021, 07, 7), y: 5},
+        { x: new Date(2021, 07, 10), y: 4},
+        { x: new Date(2021, 07, 13), y: 8},
+        { x: new Date(2021, 07, 16), y: 4},
+        { x: new Date(2021, 07, 19), y: 6},
+        { x: new Date(2021, 07, 22), y: 10},
         { x: new Date(2021, 07, 25), y: 9},
-        { x: new Date(2021, 07, 27), y: 4}
+        { x: new Date(2021, 07, 28), y: 4},
+        { x: new Date(2021, 07, 31), y: 7}
 
         ]
     }
