@@ -62,24 +62,19 @@ $a='';
  while($row_user=mysqli_fetch_array($run)){
    $c.=$row_user['COUNT(course_id)'];
  }
- $dataPoints = array( 
-   array("y" => $a, "label" => "Students","color"=> "LightSeaGreen" ),
-   array("y" => $b, "label" => "Teachers" ,"color"=> "RoyalBlue"),
-   array("y" => $c, "label" => "Courses","color"=>"#ffa703" ),
-   
- );
+
   
  ?>
 
 <!DOCTYPE html>
-<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+
 <html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
-  <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
-  <link rel="stylesheet" href="admin_dashboard.css">
-  <!-- Boxicons CDN Link -->
+
+  <link rel="stylesheet" href="admin_dashboard2.css">
+
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -104,11 +99,13 @@ $a='';
     </nav>
 
     <div class="big-box">
+
+    <a href="admin_profile.php" style="text-decoration:none">
       <div class="box1">
-        <div class="right-box1">
+        <div class="right-box">
         <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
         </div>
-        <div class="left-box1">
+        <div class="left-box">
             <h4>Admins</h4>
             <h1>
             <?php
@@ -121,11 +118,14 @@ $a='';
             </h1>
         </div>
       </div>
-      <div class="box1">
-        <div class="right-box1">
+          </a>
+
+          <a href="view_student.php" style="text-decoration:none">
+      <div class="box2">
+        <div class="right-box">
         <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
         </div>
-        <div class="left-box1">
+        <div class="left-box">
       
         <h4>Students</h4>
         <h1><?php
@@ -134,36 +134,98 @@ $a='';
             ?></h1>
         </div>
       </div>
-      <div class="box1">
-        <div class="right-box1">
+          </a>
+
+          <a href="view_teacher.php" style="text-decoration:none">
+      <div class="box3">
+        <div class="right-box">
         <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
         </div>
-        <div class="left-box1">
+        <div class="left-box">
         <h4>Teachers</h4>
         <h1><?php
             echo $b;
             ?></h1>
         </div>
       </div>
-      <div class="box1">
-        <div class="right-box1">
+          </a>
+
+          <a href="acourses.php" style="text-decoration:none">
+      <div class="box4">
+        <div class="right-box">
         <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
         </div>
-        <div class="left-box1">
+        <div class="left-box">
         <h4>Courses</h4>
         <h1><?php
             echo $c;
             ?></h1>
         </div>
       </div>
+ 
+          </a>
+
+
+    <a href="view_student_attendance.php" style="text-decoration:none">
+      <div class="box5">
+        <div class="right-box">
+          <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        </div>
+        <div class="left-box">
+          <h4>Assign Task</h4>
+        </div>
+      </div>
+    </a>
+
+    <a href="view_teacher_attendance.php" style="text-decoration:none">
+      <div class="box6">
+        <div class="right-box">
+          <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        </div>
+        <div class="left-box">
+          <h4>Payroll</h4>
+        </div>
+      </div>
+    </a>
+
+    <a href="admin_change_password.php" style="text-decoration:none">
+      <div class="box7">
+        <div class="right-box">
+          <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        </div>
+        <div class="left-box">
+          <h4>Change Password</h4>
+        </div>
+      </div>
+    </a>
+
+    <a href="admin_logout.php" style="text-decoration:none">
+      <div class="box8">
+        <div class="right-box">
+          <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        </div>
+        <div class="left-box">
+          <h4>Logout</h4>
+        </div>
+      </div>
+    </a>
+
     </div>
 
+
+
+
+
+
+
+
+
     <div class="second-box">
-    <div class="column-box" id="columnContainer">
+    <div class="pie-box" id="pie1Container">
     </div>
     <div class="area-box" id="areaContainer">
     </div>
-    <div class="pie-box" id="pieContainer">
+    <div class="pie-box" id="pie2Container">
     </div>
     </div>
   </section>
@@ -178,29 +240,32 @@ $a='';
         sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
     }
   </script>
-<script>
-var chart = new CanvasJS.Chart("columnContainer", {
-	animationEnabled: true,
-  subtitles: [{
-		text: "Attendee",
-    fontSize: 18
-	}],
 
-     axisX:{
-        labelFontColor: "LightSeaGreen",
-    },
-  axisY:{
-        gridThickness: 0,
-        labelFontColor: "LightSeaGreen",
+<script type="text/javascript">
+
+    var chart1 = new CanvasJS.Chart("pie1Container",
+    {
+      legend: {
+        horizontalAlign: "right",
+        verticalAlign: "center"
       },
-	data: [{
-		type: "column",
-		yValueFormatString: "#",
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-	}]
-});
-chart.render();
-</script>
+      data: [
+      {
+       color: "LightSeaGreen",
+       indexLabelPlacement: "outside",
+       showInLegend: true,
+       type: "doughnut",
+       dataPoints: [
+       {  y: 11, legendText: "Absent", color: "RoyalBlue" },
+       {  y: 89, legendText: "Present", color: "#ffa703" }
+       ]
+     }
+     ]
+   });
+
+    chart1.render();
+  
+  </script>
 
 <script type="text/javascript">
 window.onload = function () {
@@ -248,7 +313,7 @@ window.onload = function () {
 
 <script type="text/javascript">
 
-    var chart1 = new CanvasJS.Chart("pieContainer",
+    var chart1 = new CanvasJS.Chart("pie2Container",
     {
       legend: {
         horizontalAlign: "right",

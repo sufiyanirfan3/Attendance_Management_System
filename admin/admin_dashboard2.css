@@ -85,7 +85,7 @@
 	flex-wrap: wrap;
   }
 
-  .home-section .big-box .box1{
+  .home-section .big-box .box1,.box2,.box3,.box4,.box5,.box6,.box7,.box8{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -94,7 +94,7 @@
 	width: 18vw;
 	height: 18vh;
 	background: #fff;
-	margin: 15px;
+	margin: 12px;
     padding: 10px;
 	border-radius: 10px;
 	overflow: hidden;
@@ -102,7 +102,7 @@
 
   }
 
-  .home-section .big-box .box1 .right-box1{
+  .home-section .big-box .box1 .right-box,.box2 .right-box,.box3 .right-box,.box4 .right-box,.box5 .right-box,.box6 .right-box,.box7 .right-box,.box8 .right-box{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -113,8 +113,8 @@
     border-radius: 50%;
 
   }
-  .home-section .big-box .box1 .left-box1{
-
+  .home-section .big-box .box1 .left-box,.box2 .left-box,.box3 .left-box,.box4 .left-box,.box5 .left-box,.box6 .left-box,.box7 .left-box,.box8 .left-box{
+    color:black;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -124,37 +124,21 @@
 
 .home-section .second-box{
   position: relative;
-	padding-top: 5px;
+	/* padding-top: 5px; */
+  padding: 10px;
 	display: flex;
     justify-content:space-around;
 	flex-wrap: wrap;
 }
-.home-section .second-box .column-box{
-  /* position: absolute; */
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
 
-width: 19vw;
-height: 38vh;
-
-margin: 15px;
-
-border-radius: 10px;
-overflow: hidden;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-}
 .home-section .second-box .area-box{
 
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-
 width: 35vw;
-height: 38vh;
-
+height: 35vh;
 margin: 15px;
-
 border-radius: 10px;
 overflow: hidden;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
@@ -165,8 +149,8 @@ overflow: hidden;
   flex-wrap: wrap;
   flex-direction: row;
 
-width: 20vw;
-height: 38vh;
+width: 18vw;
+height: 35vh;
 
 margin: 15px;
 
