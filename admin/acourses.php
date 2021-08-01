@@ -10,6 +10,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
+	<title>Courses</title>
     <link rel="stylesheet" href="admin_dashboard.css">
     <link rel="stylesheet" href="acourses.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

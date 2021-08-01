@@ -125,9 +125,6 @@ body
 .container .card:nth-child(10) .circle,
 .container .card:nth-child(10) .content a
 {
-	/* background:#106d5a */
-	/* background:#fdd619 */
-	/* background:#17b895 */
 	background:#0056d2
 }
 img{
