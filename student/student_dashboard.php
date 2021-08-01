@@ -53,8 +53,8 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="student_dashboard.css">
-    
+    <link rel="stylesheet" href="student_dashboard1.css">
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
     
@@ -74,7 +74,108 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
       </div>
     </nav>
     <section>
+    <div class="main-container">
+    <div class="big-box">
+
+    <a href="admin_profile.php" style="text-decoration:none">
+      <div class="box1">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/admin.svg">
+        </div>
+        <div class="left-box">
+            <h4>Admins</h4>
+            <h1>
+            <?php
+            
+            ?>
+            </h1>
+        </div>
+      </div>
+          </a>
+
+          <a href="view_student.php" style="text-decoration:none">
+      <div class="box2">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        </div>
+        <div class="left-box">
+      
+        <h4>Students</h4>
+        <h1><?php
+            
+           
+            ?></h1>
+        </div>
+      </div>
+          </a>
+
+          <a href="scourses.php" style="text-decoration:none">
+      <div class="box3">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/teacher.svg">
+        </div>
+        <div class="left-box">
+        <h4>Teachers</h4>
+        <h1><?php
+           
+            ?></h1>
+        </div>
+      </div>
+          </a>
+
+          <a href="view_attendance.php" style="text-decoration:none">
+      <div class="box4">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/book.svg">
+        </div>
+        <div class="left-box">
+        <h4>Courses</h4>
+        <h1><?php
+            
+            ?></h1>
+        </div>
+      </div>
+ 
+          </a>
+
+
+    <a href="student_change_password.php" style="text-decoration:none">
+      <div class="box5">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        </div>
+        <div class="left-box">
+          <h4>Add Student</h4>
+        </div>
+      </div>
+    </a>
+
+    <a href="student_logout.php" style="text-decoration:none">
+      <div class="box6">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        </div>
+        <div class="left-box">
+          <h4>Add Teacher</h4>
+        </div>
+      </div>
+    </a>
+
+
+
+    </div>
+
+
+    <div class="second-box">
+    <div class="facial-img">
+      <img class='fimg'src="facerecognition.gif">
+    </div>
+    <div class="pie-box" id="pie1Container">
+    </div>
     
+    </div>
+
+    </div>
     <script>
    let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".sidebarBtn");
@@ -86,7 +187,50 @@ sidebarBtn.onclick = function() {
   sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 }
  </script>
+ 
+<?php
+$student_id = $_SESSION['student_id'];
+$sa='';
+ $sql="SELECT COUNT(attendance_status) from `student_attendance` where student_id='$student_id' and attendance_status='Absent' ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $sa.=$row_user['COUNT(attendance_status)'];
+ }
+ $sp='';
+ $sql="SELECT COUNT(attendance_status) from `student_attendance` where student_id='$student_id' and attendance_status='Present' ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $sp.=$row_user['COUNT(attendance_status)'];
+ }
+ ?>
+   <script type="text/javascript">
 
-    
+var chart1 = new CanvasJS.Chart("pie1Container",
+{
+  subtitles: [{
+text: "Student Attendance",
+fontSize: 18
+}],
+  legend: {
+    horizontalAlign: "right",
+    verticalAlign: "center"
+  },
+  data: [
+  {
+   color: "LightSeaGreen",
+   indexLabelPlacement: "outside",
+   showInLegend: true,
+   type: "doughnut",
+   dataPoints: [
+   {  y: <?php echo $sa ?>, legendText: "Absent", color: "RoyalBlue" },
+   {  y: <?php echo $sp ?>, legendText: "Present", color: "#1abc9c" }
+   ]
+ }
+ ]
+});
+
+chart1.render();
+
+</script> 
 </body>
 </html>
