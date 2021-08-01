@@ -22,7 +22,7 @@ if(isset($_GET['del'])){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="admin_dashboard.css">
-    <link rel="stylesheet" href="view_student.css">
+    <link rel="stylesheet" href="view_student1.css">
 
 </head>
 
@@ -33,16 +33,14 @@ if(isset($_GET['del'])){
         <i class='bx bx-menu sidebarBtn'></i>
         <span class="dashboard">Student Details</span>
       </div>
-     
+      <a href="add_student.php" style="text-decoration:none;"><input type="submit" class="add-btn" value="Add Student"></a>
       <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name"><?php echo $_SESSION['admin_name']?></span>
-        <i class='bx bx-chevron-down' ></i>
-      </div>
+          <!--<img src="images/profile.jpg" alt="">-->
+          <span class="admin_name"><?php echo $_SESSION['admin_name']?></span>
+          <i class='bx bx-chevron-down' ></i>
+        </div>
     </nav>
-
-    <h1>Student Details</h1>
-
+    <br>
     <div class="container">
         <table id="example" class="display" width="100%" cellspacing="0">
             <thead>

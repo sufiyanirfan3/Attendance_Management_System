@@ -48,6 +48,12 @@
           </a>
         </li>
         <li>
+          <a href="view_student_attendance.php">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Student Attendence</span>
+          </a>
+        </li>
+        <li>
           <a href="teacher_change_password.php">
             <i class='bx bx-coin-stack' ></i>
             <span class="links_name">Change Password</span>

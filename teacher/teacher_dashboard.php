@@ -52,8 +52,8 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="teacher_dashboard.css">
-    <link rel="stylesheet" href="teacher_sidebar.css">
+    <link rel="stylesheet" href="teacher_dashboard1.css">
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
     <?php include 'teacher_sidebar.php';?>
@@ -71,6 +71,126 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
+<div class="main-container">
+    <div class="big-box">
+
+    <a href="admin_profile.php" style="text-decoration:none">
+      <div class="box1">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/admin.svg">
+        </div>
+        <div class="left-box">
+            <h4>Admins</h4>
+            <h1>
+            <?php
+            
+            ?>
+            </h1>
+        </div>
+      </div>
+          </a>
+
+          <a href="view_student.php" style="text-decoration:none">
+      <div class="box2">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        </div>
+        <div class="left-box">
+      
+        <h4>Students</h4>
+        <h1><?php
+            
+           
+            ?></h1>
+        </div>
+      </div>
+          </a>
+
+          <a href="view_teacher.php" style="text-decoration:none">
+      <div class="box3">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/teacher.svg">
+        </div>
+        <div class="left-box">
+        <h4>Teachers</h4>
+        <h1><?php
+           
+            ?></h1>
+        </div>
+      </div>
+          </a>
+
+          <a href="acourses.php" style="text-decoration:none">
+      <div class="box4">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/book.svg">
+        </div>
+        <div class="left-box">
+        <h4>Courses</h4>
+        <h1><?php
+            
+            ?></h1>
+        </div>
+      </div>
+ 
+          </a>
+
+
+    <a href="add_student.php" style="text-decoration:none">
+      <div class="box5">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        </div>
+        <div class="left-box">
+          <h4>Add Student</h4>
+        </div>
+      </div>
+    </a>
+
+    <a href="add_teacher.php" style="text-decoration:none">
+      <div class="box6">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        </div>
+        <div class="left-box">
+          <h4>Add Teacher</h4>
+        </div>
+      </div>
+    </a>
+
+    <a href="admin_change_password.php" style="text-decoration:none">
+      <div class="box7">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/password.svg">
+        </div>
+        <div class="left-box">
+          <h4>Change Password</h4>
+        </div>
+      </div>
+    </a>
+        
+    <a href="admin_logout.php" style="text-decoration:none">
+      <div class="box8">
+        <div class="right-box">
+        <img class="sidebar-icon" src="../sidebar-icons/logout.svg">
+        </div>
+        <div class="left-box">
+          <h4>Logout</h4>
+        </div>
+      </div>
+    </a>
+
+    </div>
+
+
+    <div class="second-box">
+    <div class="pie-box" id="pie1Container">
+    </div>
+    <div class="pie-box" id="pie2Container">
+    </div>
+    </div>
+
+    </div>
     <section>
   
     <script>
@@ -84,7 +204,90 @@ sidebarBtn.onclick = function() {
   sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 }
  </script>
+<?php
+$sa='';
+ $sql="SELECT COUNT(attendance_status) from `student_attendance` where attendance_status='Absent' ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $sa.=$row_user['COUNT(attendance_status)'];
+ }
+ $sp='';
+ $sql="SELECT COUNT(attendance_status) from `student_attendance` where attendance_status='Present' ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $sp.=$row_user['COUNT(attendance_status)'];
+ }
+ ?>
+ <?php
+$ta='';
+ $sql="SELECT COUNT(attendance_status) from `teacher_attendance` where attendance_status='Absent' ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $ta.=$row_user['COUNT(attendance_status)'];
+ }
+ $tp='';
+ $sql="SELECT COUNT(attendance_status) from `teacher_attendance` where attendance_status='Present' ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $tp.=$row_user['COUNT(attendance_status)'];
+ }
+ ?>
+  <script type="text/javascript">
 
-    
+var chart1 = new CanvasJS.Chart("pie1Container",
+{
+  subtitles: [{
+text: "Student Attendance",
+fontSize: 18
+}],
+  legend: {
+    horizontalAlign: "right",
+    verticalAlign: "center"
+  },
+  data: [
+  {
+   color: "LightSeaGreen",
+   indexLabelPlacement: "outside",
+   showInLegend: true,
+   type: "doughnut",
+   dataPoints: [
+   {  y: <?php echo $sa ?>, legendText: "Absent", color: "RoyalBlue" },
+   {  y: <?php echo $sp ?>, legendText: "Present", color: "#ffa703" }
+   ]
+ }
+ ]
+});
+
+chart1.render();
+
+</script>
+<script type="text/javascript">
+
+    var chart1 = new CanvasJS.Chart("pie2Container",
+    {subtitles: [{
+		text: "Teacher Attendance",
+    fontSize: 18
+	}],
+      legend: {
+        horizontalAlign: "right",
+        verticalAlign: "center"
+      },
+      data: [
+      {
+       color: "LightSeaGreen",
+       indexLabelPlacement: "outside",
+       showInLegend: true,
+       type: "doughnut",
+       dataPoints: [
+       {  y: <?php echo $ta ?>, legendText: "Absent", color: "RoyalBlue" },
+       {  y: <?php echo $tp ?>, legendText: "Present", color: "#ffa703" }
+       ]
+     }
+     ]
+   });
+
+    chart1.render();
+  
+  </script>
 </body>
 </html>

@@ -73,9 +73,8 @@ $a='';
 <head>
   <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="admin_dashboard2.css">
+  <link rel="stylesheet" href="admin_dashboard.css">
 
-  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -103,7 +102,7 @@ $a='';
     <a href="admin_profile.php" style="text-decoration:none">
       <div class="box1">
         <div class="right-box">
-        <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        <img class="sidebar-icon" src="../sidebar-icons/admin.svg">
         </div>
         <div class="left-box">
             <h4>Admins</h4>
@@ -123,7 +122,7 @@ $a='';
           <a href="view_student.php" style="text-decoration:none">
       <div class="box2">
         <div class="right-box">
-        <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
         </div>
         <div class="left-box">
       
@@ -139,7 +138,7 @@ $a='';
           <a href="view_teacher.php" style="text-decoration:none">
       <div class="box3">
         <div class="right-box">
-        <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        <img class="sidebar-icon" src="../sidebar-icons/teacher.svg">
         </div>
         <div class="left-box">
         <h4>Teachers</h4>
@@ -153,7 +152,7 @@ $a='';
           <a href="acourses.php" style="text-decoration:none">
       <div class="box4">
         <div class="right-box">
-        <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        <img class="sidebar-icon" src="../sidebar-icons/book.svg">
         </div>
         <div class="left-box">
         <h4>Courses</h4>
@@ -166,24 +165,24 @@ $a='';
           </a>
 
 
-    <a href="view_student_attendance.php" style="text-decoration:none">
+    <a href="add_student.php" style="text-decoration:none">
       <div class="box5">
         <div class="right-box">
-          <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
         </div>
         <div class="left-box">
-          <h4>Assign Task</h4>
+          <h4>Add Student</h4>
         </div>
       </div>
     </a>
 
-    <a href="view_teacher_attendance.php" style="text-decoration:none">
+    <a href="add_teacher.php" style="text-decoration:none">
       <div class="box6">
         <div class="right-box">
-          <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
         </div>
         <div class="left-box">
-          <h4>Payroll</h4>
+          <h4>Add Teacher</h4>
         </div>
       </div>
     </a>
@@ -191,7 +190,7 @@ $a='';
     <a href="admin_change_password.php" style="text-decoration:none">
       <div class="box7">
         <div class="right-box">
-          <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        <img class="sidebar-icon" src="../sidebar-icons/password.svg">
         </div>
         <div class="left-box">
           <h4>Change Password</h4>
@@ -202,7 +201,7 @@ $a='';
     <a href="admin_logout.php" style="text-decoration:none">
       <div class="box8">
         <div class="right-box">
-          <img class="icons" src="../social-media-regular-icons/globe.svg" width=40px height=40px>
+        <img class="sidebar-icon" src="../sidebar-icons/logout.svg">
         </div>
         <div class="left-box">
           <h4>Logout</h4>
@@ -241,10 +240,43 @@ $a='';
     }
   </script>
 
+<?php
+$sa='';
+ $sql="SELECT COUNT(attendance_status) from `student_attendance` where attendance_status='Absent' ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $sa.=$row_user['COUNT(attendance_status)'];
+ }
+ $sp='';
+ $sql="SELECT COUNT(attendance_status) from `student_attendance` where attendance_status='Present' ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $sp.=$row_user['COUNT(attendance_status)'];
+ }
+ ?>
+ <?php
+$ta='';
+ $sql="SELECT COUNT(attendance_status) from `teacher_attendance` where attendance_status='Absent' ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $ta.=$row_user['COUNT(attendance_status)'];
+ }
+ $tp='';
+ $sql="SELECT COUNT(attendance_status) from `teacher_attendance` where attendance_status='Present' ";
+ $run=mysqli_query($conn,$sql);
+ while($row_user=mysqli_fetch_array($run)){
+   $tp.=$row_user['COUNT(attendance_status)'];
+ }
+ ?>
+
 <script type="text/javascript">
 
     var chart1 = new CanvasJS.Chart("pie1Container",
     {
+      subtitles: [{
+		text: "Student Attendance",
+    fontSize: 18
+	}],
       legend: {
         horizontalAlign: "right",
         verticalAlign: "center"
@@ -256,8 +288,8 @@ $a='';
        showInLegend: true,
        type: "doughnut",
        dataPoints: [
-       {  y: 11, legendText: "Absent", color: "RoyalBlue" },
-       {  y: 89, legendText: "Present", color: "#ffa703" }
+       {  y: <?php echo $sa ?>, legendText: "Absent", color: "RoyalBlue" },
+       {  y: <?php echo $sp ?>, legendText: "Present", color: "#ffa703" }
        ]
      }
      ]
@@ -314,7 +346,10 @@ window.onload = function () {
 <script type="text/javascript">
 
     var chart1 = new CanvasJS.Chart("pie2Container",
-    {
+    {subtitles: [{
+		text: "Teacher Attendance",
+    fontSize: 18
+	}],
       legend: {
         horizontalAlign: "right",
         verticalAlign: "center"
@@ -326,8 +361,8 @@ window.onload = function () {
        showInLegend: true,
        type: "doughnut",
        dataPoints: [
-       {  y: 11, legendText: "Absent", color: "RoyalBlue" },
-       {  y: 89, legendText: "Present", color: "#ffa703" }
+       {  y: <?php echo $ta ?>, legendText: "Absent", color: "RoyalBlue" },
+       {  y: <?php echo $tp ?>, legendText: "Present", color: "#ffa703" }
        ]
      }
      ]

@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Add Employee</span>
+        <span class="dashboard">Add Teacher</span>
       </div>
 
       <div class="profile-details">
