@@ -86,8 +86,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 </head>
 
 <body>
+<div class="head">
+    <h1>LOGIN TO ATTENDEE</h1>
+    <a href="index.php"><input type="image" class="home-img" src="home.svg" width=36px height=36px></a>
+  </div>
   <div class="container">
-
     <div class="contact-form">
       <div class="profile-login-img"><img src="admin.png"></div>
       <form method="post" action="" autocomplete="off">
