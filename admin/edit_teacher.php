@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Teacher</title>
     <link rel="stylesheet" href="add_teacher.css">
 
 </head>
@@ -14,8 +14,7 @@
     <div class="container">
         <div class="title">
             Edit Teacher
-        </div>
-        
+        </div> 
 <?php
   
     include '../db_connection.php';
@@ -31,12 +30,8 @@
         $password = $row_user['password'];
         $email=$row_user['email'];
         $phone=$row_user['phone'];
-
         $courses_teaching1= $row_user['courses_teaching'];
-        $courses_teaching= explode(',',$courses_teaching1);
-
-       
-    
+        $courses_teaching= explode(',',$courses_teaching1);   
 ?>
 
         <form class="form" method="post" action="tupdate.php" autocomplete="off" enctype="multipart/form-data">
@@ -52,18 +47,15 @@
                 <input type="file" name="teacher_image" class="input" />
             </div>
 
-
             <div class="inputfield">
                 <label for="">Password</label>
                 <input type="password" name="password" class="input" value="<?php echo $password?>" required />
             </div>
 
-
             <div class="inputfield">
                 <label for="">Email</label>
                 <input type="email" name="email" class="input" value="<?php echo $email?>" required />
             </div>
-
 
             <div class="inputfield">
                 <label for="">Phone</label>
@@ -74,16 +66,7 @@
                 <div class="title1">
                     Select Courses
                 </div>
-                <?php 
-                // $sql1="SELECT * FROM courses_enrolled";
-                // $courses_enrolled= explode(',',$courses_enrolled);
-                // print_r($courses_enrolled);
-                // $result1=mysqli_query($conn,$sql1); 
-                // if($result1){
-                //     while($row1=mysqli_fetch_assoc($result1)){
-                //     }
-                // }              
-                ?>
+      
                 <ul class="group">
                     <li>
                         <input type="checkbox" name="courses_teaching[]" 
@@ -146,9 +129,6 @@
             <input type="submit" name="teacher" value="save" id="save" class="btn" />
         </form>
 
-        
 </div>
-
 </body>
-
 </html>

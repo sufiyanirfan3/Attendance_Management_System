@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Student</title>
     <link rel="stylesheet" href="add_student.css">
-
 </head>
 
 <body>
@@ -34,11 +33,8 @@
 
         $courses_enrolled1= $row_user['courses_enrolled'];
         $courses_enrolled= explode(',',$courses_enrolled1);
-
-       
-    
+  
 ?>
-
         <form class="form" method="post" action="supdate.php" autocomplete="off" enctype="multipart/form-data">
 
             <div class="inputfield">
@@ -74,16 +70,7 @@
                 <div class="title1">
                     Select Courses
                 </div>
-                <?php 
-                // $sql1="SELECT * FROM courses_enrolled";
-                // $courses_enrolled= explode(',',$courses_enrolled);
-                // print_r($courses_enrolled);
-                // $result1=mysqli_query($conn,$sql1); 
-                // if($result1){
-                //     while($row1=mysqli_fetch_assoc($result1)){
-                //     }
-                // }              
-                ?>
+              
                 <ul class="group">
                     <li>
                         <input type="checkbox" name="courses_enrolled[]" 

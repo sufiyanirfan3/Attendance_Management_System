@@ -11,14 +11,12 @@ include '../db_connection.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Student Attendance</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="admin_dashboard.css">
     <link rel="stylesheet" href="view_student_attendance.css">
-
 </head>
 
 <body>
@@ -30,7 +28,7 @@ include '../db_connection.php';
       </div>
      
       <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
+      <img src="Sufiyan Irfan.jpg">
         <span class="admin_name"><?php echo $_SESSION['admin_name']?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>
@@ -45,8 +43,6 @@ include '../db_connection.php';
                     <th>Student Name</th>
                     <th>Attendance Status</th>
                     <th>Attendance Date</th>
-                    
-                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -78,24 +74,12 @@ include '../db_connection.php';
                     {   echo "<span style='background-color:#c8ffc8;color:#349354;padding:0px 5px;border-radius:6px;'>$attendance_status</span>";
                     }
                     else echo "<span style='background-color:#ffcbcb;color:red;padding:0px 5px;border-radius:6px;'>$attendance_status</span>";
-                    ?>
-                    
-                    
+                    ?>                  
                     </td>
+
                     <td>
                         <?php echo $attendance_date?>
-                    </td>
-                    
-                    <td>
-                    <a href="edit_student.php?student_id=<?php echo $student_id;?>">
-                    <input type="submit" name="Edit" value="Edit" class="btn" />
-                    <a>
-                    <a href="view_student.php?del=<?php echo $student_id;?>">
-                    <input type="submit" name="Delete" value="Delete" class="btn" />
-                    <a>
-                    </td>
-               
-
+                    </td>                  
                 </tr>
                 <?php } ?>
             </tbody>

@@ -65,14 +65,11 @@ $a='';
  ?>
 
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="UTF-8">
-
+  <title>Admin Dashboard</title>
   <link rel="stylesheet" href="admin_dashboard.css">
-  <title>Courses</title>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -122,12 +119,10 @@ $a='';
         <div class="right-box">
         <img class="sidebar-icon" src="../sidebar-icons/student.svg">
         </div>
-        <div class="left-box">
-      
+        <div class="left-box">  
         <h4>Students</h4>
         <h1><?php
-            echo $a;
-           
+            echo $a;        
             ?></h1>
         </div>
       </div>
@@ -166,7 +161,7 @@ $a='';
     <a href="add_student.php" style="text-decoration:none">
       <div class="box5">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/add.svg">
         </div>
         <div class="left-box">
           <h4>Add Student</h4>
@@ -177,7 +172,7 @@ $a='';
     <a href="add_teacher.php" style="text-decoration:none">
       <div class="box6">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/add.svg">
         </div>
         <div class="left-box">
           <h4>Add Teacher</h4>

@@ -11,8 +11,7 @@ include '../db_connection.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Teacher Attendance</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
@@ -30,7 +29,7 @@ include '../db_connection.php';
       </div>
      
       <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
+      <img src="Sufiyan Irfan.jpg">
         <span class="admin_name"><?php echo $_SESSION['admin_name']?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>
@@ -44,9 +43,7 @@ include '../db_connection.php';
                     <th>Teacher ID</th>
                     <th>Teacher Name</th>
                     <th>Attendance Status</th>
-                    <th>Attendance Date</th>
-                    
-                    <th>Action</th>
+                    <th>Attendance Date</th>                
                 </tr>
             </thead>
             <tbody>
@@ -78,24 +75,12 @@ include '../db_connection.php';
                     {   echo "<span style='background-color:#c8ffc8;color:#349354;padding:0px 5px;border-radius:6px;'>$attendance_status</span>";
                     }
                     else echo "<span style='background-color:#ffcbcb;color:red;padding:0px 5px;border-radius:6px;'>$attendance_status</span>";
-                    ?>
-                    
-                    
+                    ?>                                   
                     </td>
+
                     <td>
                         <?php echo $attendance_date?>
-                    </td>
-                    
-                    <td>
-                    <a href="edit_teacher.php?teacher_id=<?php echo $teacher_id;?>">
-                    <input type="submit" name="Edit" value="Edit" class="btn" />
-                    <a>
-                    <a href="view_teacher.php?del=<?php echo $teacher_id;?>">
-                    <input type="submit" name="Delete" value="Delete" class="btn" />
-                    <a>
-                    </td>
-               
-
+                    </td>                          
                 </tr>
                 <?php } ?>
             </tbody>

@@ -1,8 +1,12 @@
 <!-- teacher_courses -->
-<?php 
+<?php
 session_start();
+include '../db_connection.php';
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+    header('location:../login.php');
+    exit;
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

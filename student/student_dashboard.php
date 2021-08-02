@@ -53,13 +53,11 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="student_dashboard1.css">
+    <link rel="stylesheet" href="student_dashboard.css">
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
-    
     <?php include 'student_sidebar.php';?>
-    
     <section class="home-section">
     <nav>
       <div class="sidebar-button">
@@ -77,7 +75,7 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
     <div class="main-container">
     <div class="big-box">
 
-    <a href="admin_profile.php" style="text-decoration:none">
+    <a href="" style="text-decoration:none">
       <div class="box1">
         <div class="right-box">
         <img class="sidebar-icon" src="../sidebar-icons/admin.svg">
@@ -86,25 +84,24 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
             <h4>Admins</h4>
             <h1>
             <?php
-            
+            $sql="SELECT COUNT(admin_id) from `admin` ";
+            $run=mysqli_query($conn,$sql);
+            while($row_user=mysqli_fetch_array($run)){
+              echo $row_user['COUNT(admin_id)'];
+            }
             ?>
             </h1>
         </div>
       </div>
           </a>
 
-          <a href="view_student.php" style="text-decoration:none">
+          <a href="student_profile.php" style="text-decoration:none">
       <div class="box2">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/user.svg">
         </div>
-        <div class="left-box">
-      
-        <h4>Students</h4>
-        <h1><?php
-            
-           
-            ?></h1>
+        <div class="left-box">  
+        <h4>Profile</h4>
         </div>
       </div>
           </a>
@@ -112,13 +109,10 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
           <a href="scourses.php" style="text-decoration:none">
       <div class="box3">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/teacher.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/book.svg">
         </div>
         <div class="left-box">
-        <h4>Teachers</h4>
-        <h1><?php
-           
-            ?></h1>
+        <h4>Courses</h4>
         </div>
       </div>
           </a>
@@ -126,13 +120,10 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
           <a href="view_attendance.php" style="text-decoration:none">
       <div class="box4">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/book.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/attendance.svg">
         </div>
         <div class="left-box">
-        <h4>Courses</h4>
-        <h1><?php
-            
-            ?></h1>
+        <h4>View Attendance</h4>
         </div>
       </div>
  
@@ -142,10 +133,10 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
     <a href="student_change_password.php" style="text-decoration:none">
       <div class="box5">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/password.svg">
         </div>
         <div class="left-box">
-          <h4>Add Student</h4>
+          <h4>Change Password</h4>
         </div>
       </div>
     </a>
@@ -153,10 +144,10 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
     <a href="student_logout.php" style="text-decoration:none">
       <div class="box6">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/logout.svg">
         </div>
         <div class="left-box">
-          <h4>Add Teacher</h4>
+          <h4>Logout</h4>
         </div>
       </div>
     </a>
@@ -168,7 +159,7 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
 
     <div class="second-box">
     <div class="facial-img">
-      <img class='fimg'src="facerecognition.gif">
+      <a href="student_mark_attendance.php"><img class='fimg'src="facerecognition.gif"></a>
     </div>
     <div class="pie-box" id="pie1Container">
     </div>

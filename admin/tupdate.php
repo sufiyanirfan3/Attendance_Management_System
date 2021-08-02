@@ -1,4 +1,3 @@
-
 <?php
     include '../db_connection.php';
         $teacher_id = $_POST['teacher_id'];
@@ -13,21 +12,16 @@
         $etemp_name=$_FILES['teacher_image']['tmp_name'];
         $epassword = $_POST['password'];
         $eemail=$_POST['email'];
-        $ephone=$_POST['phone'];
-
-      
+        $ephone=$_POST['phone'];   
         $ecourses_teaching= implode(',',$_POST['courses_teaching']);
      
-
         if(empty($eteacher_image)){
             $eteacher_image=$teacher_image;
         }
        
         $update="UPDATE teacher SET teacher_name='{$eteacher_name}',teacher_image='$eteacher_image',password='{$epassword}', email='{$eemail}',phone='{$ephone}',courses_teaching='$ecourses_teaching' WHERE teacher_id={$teacher_id}";
         $run_update=mysqli_query($conn,$update)  or die("Error");
-
-        
-        
+      
         if($run_update){
             echo "Data has been updated successfully";
             move_uploaded_file($etemp_name,"../teacher_images/$eteacher_image");

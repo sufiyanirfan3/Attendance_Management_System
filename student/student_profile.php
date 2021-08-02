@@ -1,5 +1,4 @@
 <?php 
-
 session_start();
 include 'student_sidebar.php';
 include '../db_connection.php';
@@ -15,7 +14,6 @@ $row_user=mysqli_fetch_array($run);
   $address=$row_user['address'];
   $courses_enrolled=$row_user['courses_enrolled'];
  
-
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +92,6 @@ $row_user=mysqli_fetch_array($run);
           </tr>
 
         </table>
-
 
       </div>
       <div class="card3">

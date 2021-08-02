@@ -73,8 +73,6 @@
   width: 100%;
 }
 
-
-/* Responsive Media Query */
 @media (max-width: 1240px) {
   .sidebar{
     width: 60px;

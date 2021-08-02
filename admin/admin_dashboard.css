@@ -1,4 +1,3 @@
-/* Googlefont Poppins CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -10,7 +9,6 @@
     position: relative;
     background: #f5f5f5;
     min-height: 100vh;
-
     width: calc(100% - 240px);
     left: 240px;
     transition: all 0.5s ease;
@@ -79,10 +77,10 @@
   
   .home-section .big-box{
     position: relative;
-	padding-top: 80px;
-	display: flex;
+	  padding-top: 80px;
+	  display: flex;
     justify-content:space-around;
-	flex-wrap: wrap;
+	  flex-wrap: wrap;
   }
   .sidebar-icon{
     width: 40px;
@@ -95,15 +93,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-	width: 18vw;
-	height: 18vh;
-	background: #fff;
-	margin: 12px;
+    width: 18vw;
+    height: 18vh;
+    background: #fff;
+    margin: 12px;
     padding: 10px;
-	border-radius: 10px;
-	overflow: hidden;
+    border-radius: 10px;
+    overflow: hidden;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-
   }
 
   .home-section .big-box .box1 .right-box,.box2 .right-box,.box3 .right-box,.box4 .right-box,.box5 .right-box,.box6 .right-box,.box7 .right-box,.box8 .right-box{
@@ -114,7 +111,6 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-
   }
  
   .home-section .big-box .box1 .right-box,.box3 .right-box,.box6 .right-box,.box8 .right-box{
@@ -134,38 +130,32 @@
 
 .home-section .second-box{
   position: relative;
-	/* padding-top: 5px; */
   padding: 10px;
 	display: flex;
-    justify-content:space-around;
+  justify-content:space-around;
 	flex-wrap: wrap;
 }
 
 .home-section .second-box .area-box{
-
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-width: 35vw;
-height: 35vh;
-margin: 15px;
-border-radius: 10px;
-overflow: hidden;
+  width: 35vw;
+  height: 35vh;
+  margin: 15px;
+  border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 .home-section .second-box .pie-box{
-  /* position: absolute; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-
-width: 18vw;
-height: 35vh;
-
-margin: 15px;
-
-border-radius: 10px;
-overflow: hidden;
+  width: 18vw;
+  height: 35vh;
+  margin: 15px;
+  border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
@@ -176,7 +166,6 @@ overflow: hidden;
       left: 60px;
     }
     .sidebar.active ~ .home-section{
-      /* width: calc(100% - 220px); */
       overflow: hidden;
       left: 220px;
     }
@@ -205,24 +194,18 @@ overflow: hidden;
   }
 
 @media (max-width: 550px) {
-  
   .sidebar.active ~ .home-section nav .profile-details{
     display: none;
   }
 }
 @media (max-width: 600px) {
-
   .home-section .big-box .box1,.box2,.box3,.box4,.box5,.box6,.box7,.box8{
-   
 	width: 35vw;
   height: 23vh;
   }
 
   .home-section .second-box .pie-box,.area-box{
-    
-  
   width: 80vw;
-  
   }
 }
 

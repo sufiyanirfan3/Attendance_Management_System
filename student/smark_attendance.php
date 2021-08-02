@@ -35,14 +35,17 @@
 
     <style>
         button{
-            margin-bottom:20px;
-            background-color:green;
-            color:white;
-            position:400px;
-            border:8px solid green;
-            border-radius:10px;
-            width:100px;
-            height 100px;
+            background-color:#fff;
+            color: #1abc9c;
+            border: 2px solid #1abc9c;
+            font-weight:500;
+            font-size: 16px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            padding: 6px;
+            width: 100px;
+            cursor: pointer;
+
         }
         body {
             margin: 0;
@@ -69,14 +72,13 @@ while($row_user=mysqli_fetch_array($run)){
     $student_name = $row_user['student_name'];
     $php_framework[] = $student_name;
 }
-print_r($php_framework);
+
 ?>
 
 <form method="post">
    <button type="submit" name="submit" value="submit">SAVE</button>
 </form>
     <video id="videoInput" width="450" height="450" muted controls>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <div id = "random"></div>
         <script src="../face-api.min.js"></script>
@@ -109,7 +111,6 @@ print_r($php_framework);
             async function recognizeFaces() {
 
                 const labeledDescriptors = await loadLabeledImages()
-                // console.log(labeledDescriptors)
                 const faceMatcher = new faceapi.FaceMatcher(labeledDescriptors, 0.6)
 
 
@@ -153,7 +154,7 @@ print_r($php_framework);
                                 dataType: "json",
                                 data: {res:res},
                                 success: function (result) {
-                                    // alert("name is " + result);
+                                   
                                     $("#random").html(result);
                                 }
                                 });
@@ -170,18 +171,17 @@ print_r($php_framework);
             function loadLabeledImages() {
                 
                 var labels = <?php echo '["'.implode('","',$php_framework).'"]' ;?>;
-                // const labels = ['Sufiyan Irfan', 'Black Widow', 'Captain America']
                 console.log(labels);
                 return Promise.all(
                     labels.map(async (label) => {
                         const descriptions = []
-                        // for (let i = 1; i <= 2; i++) {
+                   
                             const img = await faceapi.fetchImage(`..//student_images/${label}.jpg`)
                            
                             const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
-                            // console.log(label + i + JSON.stringify(detections))
+                            
                             descriptions.push(detections.descriptor)
-                        // }
+                 
                         document.body.append(label + ' Faces Loaded | ')
                         return new faceapi.LabeledFaceDescriptors(label, descriptions)
 

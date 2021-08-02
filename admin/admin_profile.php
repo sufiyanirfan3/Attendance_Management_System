@@ -20,7 +20,7 @@ $row_user=mysqli_fetch_array($run);
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Admin Profile</title>
   <link rel="stylesheet" href="admin_dashboard.css">
   <link rel="stylesheet" href="admin_profile.css">
 </head>
@@ -34,7 +34,7 @@ $row_user=mysqli_fetch_array($run);
       </div>
 
       <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
+      <img src="Sufiyan Irfan.jpg">
         <span class="admin_name">
           <?php echo $_SESSION['admin_name']?>
         </span>

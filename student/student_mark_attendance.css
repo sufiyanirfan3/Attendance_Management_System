@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container .card1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.container .card1 .face-img{
+    width: 450px;
+    height: 450px;
+    border-radius: 10px;
+}
+.container .card2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.mark-btn{
+    background-color:#fff;
+    color: #1abc9c;
+    border: 2px solid #1abc9c;
+    font-weight:500;
+    font-size: 16px;
+    border-radius: 6px;
+    margin-top: 35px;
+    padding: 8px;
+    width: 150px;
+    cursor: pointer;
+}
+.mark-btn:hover{
+    background-color:#1abc9c;
+    color: #fff;
+    
+}
+.home-img{
+    margin-top: 35px;
+    margin-left: 30px;
+  }

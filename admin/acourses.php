@@ -13,7 +13,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 	<title>Courses</title>
     <link rel="stylesheet" href="admin_dashboard.css">
     <link rel="stylesheet" href="acourses.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    </head>
 <body>
@@ -26,7 +26,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
       </div>
      
       <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
+	  <img src="Sufiyan Irfan.jpg">
         <span class="admin_name"><?php echo $_SESSION['admin_name']?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>

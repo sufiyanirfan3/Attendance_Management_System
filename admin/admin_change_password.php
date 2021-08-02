@@ -12,12 +12,10 @@ include '../db_connection.php';
 if(isset($_POST['password'])){
     $admin_id=$_SESSION['admin_id'];
     $select="SELECT * FROM `admin` where admin_id='$admin_id' ";
-    
     $run=mysqli_query($conn,$select);
     $row_user=mysqli_fetch_array($run);
     $password=$row_user['password'];
     $oldpassword = MD5($_POST['oldpassword']);
-    
     $newpassword = MD5($_POST['newpassword']);
     if($password==$oldpassword){
         $update="UPDATE `admin` SET password='{$newpassword}' where `admin_id`='$admin_id' ";
@@ -33,7 +31,7 @@ if(isset($_POST['password'])){
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Change Password</title>
   <link rel="stylesheet" href="admin_dashboard.css">
   <link rel="stylesheet" href="admin_change_password.css">
 </head>
@@ -47,7 +45,7 @@ if(isset($_POST['password'])){
       </div>
 
       <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
+      <img src="Sufiyan Irfan.jpg">
         <span class="admin_name">
           <?php echo $_SESSION['admin_name']?>
         </span>

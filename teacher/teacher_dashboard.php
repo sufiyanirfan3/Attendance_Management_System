@@ -52,7 +52,7 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="teacher_dashboard1.css">
+    <link rel="stylesheet" href="teacher_dashboard.css">
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>

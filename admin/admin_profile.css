@@ -124,7 +124,7 @@ table, th, td {
     font-weight: bold;
     font-size: 20px;
 }
-/* For Chrome or Safari */
+
 progress::-webkit-progress-bar {
     background-color: #eeeeee;
 }
@@ -136,7 +136,6 @@ progress::-webkit-progress-value {
 }
 
 progress {
-   
     border:1px solid #1abc9c;
     background-color: #1abc9c;
     width: 40vw;
@@ -154,20 +153,16 @@ progress {
         }
         .container .card2
         {   
-       
             padding: 10px;
             width: 60vw;
               
         }.container .card4
-        {   
-       
+        {         
             padding: 10px;
-            width: 60vw;
-              
+            width: 60vw;           
         }
     
 }
-
 
 @media(max-width:910px){
     .name{
@@ -192,8 +187,7 @@ progress {
         padding:0;
         }
         .container .card1
-        {   
-            
+        {              
             width: 60vw;
             height: 40vh;       
         }
@@ -205,18 +199,15 @@ progress {
         height: 50vh;       
     }
     .container .card3
-    {   
-       
-        width: 60vw;
-         
+    {         
+        width: 60vw;         
     }
     .container .card4
     {   
         margin-left: 5px;
         padding: 5px;
         width: 90vw;
-        height: 50vh;  
-           
+        height: 50vh;             
     }
 }
 @media(max-width:530px){
@@ -227,10 +218,8 @@ progress {
         font-size: 14px;
         }
     .container .card2{
-        padding: 0;
-        
+        padding: 0;       
     }
-
 }
 @media(max-width:470px){
     th{
@@ -241,8 +230,7 @@ progress {
         font-size: 12px;
         }
     .container .card2{
-        padding: 0;
-        
+        padding: 0;       
     }
 }
 @media(max-width:410px){
@@ -265,6 +253,5 @@ progress {
         margin: 0;
         padding: 0;
         margin-bottom: 15px;        
-    }
-    
+    }  
 }

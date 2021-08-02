@@ -12,15 +12,11 @@
         $uphone=$_POST['phone'];
         $uaddress=$_POST['address'];
   
-
         $update="UPDATE admin SET admin_name='{$uadmin_name}', email='{$uemail}',phone='{$uphone}',address='$uaddress' WHERE admin_id={$admin_id}";
         $run_update=mysqli_query($conn,$update)  or die("Error");
 
-        
-        
         if($run_update){
             echo "Data has been updated successfully";
-         
             header('Location:admin_profile.php');
         }
         else{

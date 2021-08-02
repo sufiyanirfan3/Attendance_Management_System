@@ -3,12 +3,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-
     <link rel="stylesheet" href="admin_sidebar.css">
     <link rel="stylesheet" href="admin_dashboard.css">
-
-
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
   <div class="sidebar">
@@ -25,7 +23,7 @@
         </li>
         <li>
           <a href="admin_profile.php">
-          <img class="sidebar-icon" src="../sidebar-icons/dashboard.svg">
+          <img class="sidebar-icon" src="../sidebar-icons/user.svg">
             <span class="links_name">Profile</span>
           </a>
         </li>
@@ -34,8 +32,7 @@
           <img class="sidebar-icon" src="../sidebar-icons/course.svg">
             <span class="links_name">Courses</span>
           </a>
-        </li>
-     
+        </li>   
         <li>
           <a href="view_student.php">
           <img class="sidebar-icon" src="../sidebar-icons/student.svg">
@@ -47,8 +44,7 @@
           <img class="sidebar-icon" src="../sidebar-icons/attendance.svg">
             <span class="links_name">Student Attendence</span>
           </a>
-        </li>
-      
+        </li>  
         <li>
           <a href="view_teacher.php">
           <img class="sidebar-icon" src="../sidebar-icons/teacher.svg">
@@ -66,8 +62,7 @@
           <img class="sidebar-icon" src="../sidebar-icons/password.svg">
             <span class="links_name">Change Password</span>
           </a>
-        </li>
-      
+        </li>    
         <li class="log_out">
           <a href="admin_logout.php">
           <img class="sidebar-icon" src="../sidebar-icons/logout.svg">
@@ -76,9 +71,6 @@
         </li>
       </ul>
   </div>
-
-
-  
 </body>
 </html>
 
