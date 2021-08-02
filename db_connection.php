@@ -4,7 +4,7 @@
 // $password="";
 // $database="attendance_management_system";
 
-$servername="127.0.0.1:50830";
+$servername="127.0.0.1:49709";
 $username="azure";
 $password="6#vWHD_$";
 $database="attendance_management_system";
