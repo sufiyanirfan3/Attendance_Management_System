@@ -131,7 +131,7 @@ header .navigation{
 
 header .navigation a{
   color:#fff;
-  font-size: 1.2em;
+  font-size: 1.15em;
   font-weight: 500;
   text-decoration: none;
   margin-left: 30px;
@@ -541,7 +541,7 @@ body{
 
   .menu-btn{
     position: absolute;
-    background: url(menu.png)no-repeat;
+    background: url(frontend-images/menu.png)no-repeat;
     background-size: 30px;
     background-position: center;
     width: 40px;
@@ -554,7 +554,7 @@ body{
 
   .menu-btn.active{
     z-index: 999;
-    background: url(close.png)no-repeat;
+    background: url(frontend-images/close.png)no-repeat;
     background-size: 25px;
     background-position: center;
     transition: 0.3s ease;

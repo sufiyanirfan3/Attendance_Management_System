@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <a href="login.php">Login</a>       
         <img src="moon.svg" id="icon">
         <span id="main-span">
-          <img src="palette.svg" id="icon">
+          <img src="frontend-images/palette.svg" id="icon">
           <ul>
             <li class="colors" id="green" data-color="#1abc9c" ></li>
             <li class="colors" id="blue" data-color="#0056d2" ></li>
@@ -81,13 +81,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       <div class="content">
         <div class="column col-left reveal">
           <div class="img-card">
-            <img src="facial.gif" alt="">
+            <img src="frontend-images/facial.gif" alt="">
           </div>
         </div>
         <div class="column col-right reveal">
           <h2 class="content-title">Attendance Management System</h2>
-          <p class="paragraph-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a href="#" class="btn">See More</a>
+          <p class="paragraph-text">This web application will facilitate institutions and help the teachers, improve and organize the process of taking, tracking and managing attendance of students. This application will provide facilities for the automated attendance of students using live face recognition to recognize each individual and mark their attendance automatically and utilizes video and image processing to provide inputs to the system. Facility of marking attendance manually will also be provided. </p>
+          <a href="#languages" class="btn">See More</a>
         </div>
       </div>
     </section>
@@ -126,7 +126,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       <div class="content">
         <div class="card reveal">
           <div class="developers-img">
-            <img src="Sufiyan Irfan.jpg" width=300px height=300px>
+            <img src="frontend-images/Sufiyan Irfan.jpg" width=300px height=300px>
           </div>
           <div class="info">
             <h3>Sufiyan Irfan</h3>
@@ -139,7 +139,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         </div>
         <div class="card reveal">
           <div class="developers-img">
-            <img src="Sumaiya Inayat.jpg" width=300px height=300px>
+            <img src="frontend-images/Sumaiya Inayat.jpg" width=300px height=300px>
           </div>
           <div class="info">
             <h3>Sumaiya Inayat</h3>
@@ -282,10 +282,10 @@ function reveal(){
   icon.onclick = function () {
       document.body.classList.toggle("dark-theme");
       if (document.body.classList.contains("dark-theme")) {
-        icon.src="sun.svg"
+        icon.src="frontend-images/sun.svg"
         
       } else {
-        icon.src="moon.svg"
+        icon.src="frontend-images/moon.svg"
       }
   }
 </script>

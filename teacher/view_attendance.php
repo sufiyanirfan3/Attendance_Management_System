@@ -13,7 +13,7 @@ include '../db_connection.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>View Attendance</title>
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -79,17 +79,12 @@ include '../db_connection.php';
                     {   echo "<span style='background-color:#c8ffc8;color:#349354;padding:0px 5px;border-radius:6px;'>$attendance_status</span>";
                     }
                     else echo "<span style='background-color:#ffcbcb;color:red;padding:0px 5px;border-radius:6px;'>$attendance_status</span>";
-                    ?>
-                    
-                    
+                    ?>               
                     </td>
                     <td>
                         <?php echo $attendance_date?>
                     </td>
                     
-                   
-               
-
                 </tr>
                 <?php } ?>
             </tbody>

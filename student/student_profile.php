@@ -1,5 +1,9 @@
 <?php 
 session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+  header('location:../login.php');
+  exit;
+}
 include 'student_sidebar.php';
 include '../db_connection.php';
 $student_id=$_SESSION['student_id'];
@@ -23,7 +27,7 @@ $row_user=mysqli_fetch_array($run);
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Student Profile</title>
   <link rel="stylesheet" href="student_dashboard.css">
   <link rel="stylesheet" href="student_profile.css">
 </head>

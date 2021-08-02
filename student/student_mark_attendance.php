@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+    header('location:../login.php');
+    exit;
+}
 include "../db_connection.php";
 $student_id=$_SESSION['student_id'];
 $select="SELECT attendance_date,attendance_status FROM student_attendance WHERE student_id='$student_id'";

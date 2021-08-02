@@ -1,6 +1,10 @@
 <?php 
 session_start();
 include 'teacher_sidebar.php';
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+  header('location:../login.php');
+  exit;
+}
 include '../db_connection.php';
 $teacher_id=$_SESSION['teacher_id'];
 $select="SELECT * FROM teacher where teacher_id='$teacher_id' ";
@@ -22,7 +26,7 @@ $row_user=mysqli_fetch_array($run);
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Profile</title>
   <link rel="stylesheet" href="teacher_dashboard.css">
   <link rel="stylesheet" href="teacher_profile.css">
 </head>

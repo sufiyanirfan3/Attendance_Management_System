@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="teacher_sidebar.css">
+    <link rel="stylesheet" href="teacher_sidebar1.css">
     <link rel="stylesheet" href="teacher_dashboard.css">
 
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -12,7 +12,7 @@
 <body>
   <div class="sidebar">
     <div class="logo-details">
-    <img style="filter:invert(1);margin-left:15px;margin-right:20px;"src="../sidebar-icons/face-recognition.svg" width=30px height=30px>
+    <input type="image" style="filter:invert(1);margin-left:15px;margin-right:20px;"src="../sidebar-icons/face-recognition.svg" width=30px height=30px>
       <span class="logo_name">Attendee</span>
     </div>
       <ul class="nav-links">

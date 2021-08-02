@@ -11,7 +11,7 @@ include '../db_connection.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Attendance</title>
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -30,7 +30,7 @@ include '../db_connection.php';
       </div>
      
       <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
+      <img src="../teacher_images/<?php echo $_SESSION['teacher_image'];?>">
         <span class="admin_name"><?php echo $_SESSION['teacher_name']?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>

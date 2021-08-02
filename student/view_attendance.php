@@ -1,6 +1,10 @@
 <?php 
 //student
 session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+    header('location:../login.php');
+    exit;
+  }
 $student_id=$_SESSION['student_id'];
 include 'student_sidebar.php';
 include '../db_connection.php';
@@ -13,7 +17,7 @@ include '../db_connection.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>View Attendance</title>
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -85,10 +89,7 @@ include '../db_connection.php';
                     <td>
                         <?php echo $attendance_date?>
                     </td>
-                    
-                   
-               
-
+    
                 </tr>
                 <?php } ?>
             </tbody>

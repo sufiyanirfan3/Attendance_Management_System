@@ -52,7 +52,7 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Dashboard</title>
     <link rel="stylesheet" href="student_dashboard.css">
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
@@ -126,7 +126,6 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
         <h4>View Attendance</h4>
         </div>
       </div>
- 
           </a>
 
 
@@ -151,19 +150,14 @@ if(file_get_contents("student_attendance_record/".$a.".txt")){
         </div>
       </div>
     </a>
-
-
-
     </div>
-
 
     <div class="second-box">
     <div class="facial-img">
       <a href="student_mark_attendance.php"><img class='fimg'src="facerecognition.gif"></a>
     </div>
     <div class="pie-box" id="pie1Container">
-    </div>
-    
+    </div>   
     </div>
 
     </div>
