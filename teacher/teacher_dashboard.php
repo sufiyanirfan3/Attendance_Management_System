@@ -80,85 +80,74 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
         <img class="sidebar-icon" src="../sidebar-icons/admin.svg">
         </div>
         <div class="left-box">
-            <h4>Admins</h4>
-            <h1>
-            <?php
-            
-            ?>
-            </h1>
+            <h4>Profile</h4>
+         
         </div>
       </div>
           </a>
 
-          <a href="view_student.php" style="text-decoration:none">
+          <a href="edit_teacher.php?teacher_id=<?php echo $_SESSION['teacher_id'];?>" style="text-decoration:none">
       <div class="box2">
         <div class="right-box">
         <img class="sidebar-icon" src="../sidebar-icons/student.svg">
         </div>
         <div class="left-box">
       
-        <h4>Students</h4>
-        <h1><?php
-            
-           
-            ?></h1>
+        <h4>Edit Profile</h4>
+      
         </div>
       </div>
           </a>
 
-          <a href="view_teacher.php" style="text-decoration:none">
+          <a href="tcourses.php" style="text-decoration:none">
       <div class="box3">
         <div class="right-box">
         <img class="sidebar-icon" src="../sidebar-icons/teacher.svg">
         </div>
         <div class="left-box">
-        <h4>Teachers</h4>
-        <h1><?php
-           
-            ?></h1>
+        <h4>Courses Offered</h4>
+  
         </div>
       </div>
           </a>
 
-          <a href="acourses.php" style="text-decoration:none">
+          <a href="teacher_mark_attendance.php" style="text-decoration:none">
       <div class="box4">
         <div class="right-box">
         <img class="sidebar-icon" src="../sidebar-icons/book.svg">
         </div>
         <div class="left-box">
-        <h4>Courses</h4>
-        <h1><?php
-            
-            ?></h1>
+        <h4>Mark Attendance</h4>
+  
         </div>
       </div>
  
           </a>
 
 
-    <a href="add_student.php" style="text-decoration:none">
+    <a href="view_attendance.php" style="text-decoration:none">
       <div class="box5">
         <div class="right-box">
         <img class="sidebar-icon" src="../sidebar-icons/student.svg">
         </div>
         <div class="left-box">
-          <h4>Add Student</h4>
+          <h4>View Attendance</h4>
         </div>
       </div>
     </a>
 
-    <a href="add_teacher.php" style="text-decoration:none">
+    <a href="view_student_attendance.php" style="text-decoration:none">
       <div class="box6">
         <div class="right-box">
         <img class="sidebar-icon" src="../sidebar-icons/student.svg">
         </div>
         <div class="left-box">
-          <h4>Add Teacher</h4>
+          <h4>Student Attendance</h4>
         </div>
       </div>
     </a>
 
-    <a href="admin_change_password.php" style="text-decoration:none">
+    <a href="teacher_change_password.php" style="text-decoration:none">
       <div class="box7">
         <div class="right-box">
         <img class="sidebar-icon" src="../sidebar-icons/password.svg">
@@ -169,7 +158,7 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
       </div>
     </a>
         
-    <a href="admin_logout.php" style="text-decoration:none">
+    <a href="teacher_logout.php" style="text-decoration:none">
       <div class="box8">
         <div class="right-box">
         <img class="sidebar-icon" src="../sidebar-icons/logout.svg">

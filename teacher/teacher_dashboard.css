@@ -101,7 +101,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-	width: 18vw;
+	width: 20vw;
 	height: 17vh;
 	background: #fff;
 	margin: 12px;
@@ -160,18 +160,14 @@ overflow: hidden;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 .home-section .second-box .pie-box{
-  /* position: absolute; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-
-width: 25vw;
-height: 35vh;
-
-margin: 15px;
-
-border-radius: 10px;
-overflow: hidden;
+  width: 25vw;
+  height: 35vh;
+  margin: 15px;
+  border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
@@ -182,7 +178,6 @@ overflow: hidden;
       left: 60px;
     }
     .sidebar.active ~ .home-section{
-      /* width: calc(100% - 220px); */
       overflow: hidden;
       left: 220px;
     }
@@ -196,7 +191,6 @@ overflow: hidden;
     }
   }
 
-
 @media (max-width: 700px) {
     nav .sidebar-button .dashboard,
     nav .profile-details .admin_name,
@@ -207,7 +201,6 @@ overflow: hidden;
       height: 50px;
       min-width: 40px;
     }
-   
   }
 
 @media (max-width: 550px) {
@@ -219,14 +212,11 @@ overflow: hidden;
 @media (max-width: 600px) {
 
   .home-section .big-box .box1,.box2,.box3,.box4,.box5,.box6,.box7,.box8{
-   
 	width: 35vw;
   height: 23vh;
   }
 
   .home-section .second-box .pie-box,.area-box{
-    
-  
   width: 80vw;
   
   }

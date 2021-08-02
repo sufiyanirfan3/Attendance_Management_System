@@ -55,11 +55,11 @@
 .sidebar .nav-links li a:hover{
   background: #081D45;
 }
-.sidebar .nav-links li i{
-  min-width: 60px;
-  text-align: center;
-  font-size: 18px;
-  color: #fff;
+.sidebar .nav-links li .sidebar-icon{
+  width: 18px;
+  margin-right: 25px;
+  margin-left: 20px;
+  filter: invert(1);
 }
 .sidebar .nav-links li a .links_name{
   color: #fff;

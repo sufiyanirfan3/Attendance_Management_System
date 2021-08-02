@@ -92,8 +92,8 @@
 	flex-wrap: wrap;
   }
   .sidebar-icon{
-    /* width: 40px;
-    height: 40px; */
+    width: 40px;
+    height: 40px;
     filter: invert(1);
   }
   .home-section .big-box .box1,.box2,.box3,.box4,.box5,.box6{

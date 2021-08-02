@@ -80,8 +80,7 @@ include '../db_connection.php';
                     }
                     else echo "<span style='background-color:#ffcbcb;color:red;padding:0px 5px;border-radius:6px;'>$attendance_status</span>";
                     ?>
-                    
-                    
+                                       
                     </td>
                     <td>
                         <?php echo $attendance_date?>

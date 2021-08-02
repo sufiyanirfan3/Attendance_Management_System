@@ -12,7 +12,7 @@
 <body>
   <div class="sidebar">
     <div class="logo-details">
-      <i class='bx bxl-c-plus-plus'></i>
+    <img class="sidebar-icon" src="../sidebar-icons/face-recognition.svg">
       <span class="logo_name">Attendee</span>
     </div>
       <ul class="nav-links">

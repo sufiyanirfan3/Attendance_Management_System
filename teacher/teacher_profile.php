@@ -51,7 +51,7 @@ $row_user=mysqli_fetch_array($run);
         <p class="name">
           <?php echo $teacher_name?>
         <p>
-        <input type="submit" class="edit-btn" name="edit" value="Edit Profile">
+        <a href="edit_teacher.php?teacher_id=<?php echo $_SESSION['teacher_id'];?>"><input type="submit" class="edit-btn" name="edit" value="Edit Profile"></a>
       </div>
       <div class="card2">
         <table style="width:90%">
