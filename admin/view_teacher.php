@@ -53,6 +53,7 @@ if(isset($_GET['del'])){
                     <th>Image</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>Address</th>
                     <th>Courses Teaching</th>
                     <th>Action</th>
                 </tr>
@@ -70,6 +71,7 @@ if(isset($_GET['del'])){
         
                     $email=$row_user['email'];
                     $phone=$row_user['phone'];
+                    $address=$row_user['address'];
                     $courses_teaching=$row_user['courses_teaching'];
 
                     
@@ -93,6 +95,9 @@ if(isset($_GET['del'])){
                     </td>
                     <td>
                         <?php echo $phone?>
+                    </td>
+                    <td>
+                        <?php echo $address?>
                     </td>
                     <td>
                         <?php 

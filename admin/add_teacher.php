@@ -22,8 +22,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         $password = $_POST['password'];
         $email=$_POST['email'];
         $phone=$_POST['phone'];
+        $address=$_POST['address'];
         $courses_teaching= implode(',',$_POST['courses_teaching']);
-        $sql="INSERT INTO `teacher`(`teacher_id`,`teacher_name`,`teacher_image`, `password`,`email`,`phone`,`courses_teaching`) VALUES ('$teacher_id','$teacher_name','$teacher_image',MD5('$password'),'$email','$phone','".$courses_teaching."')";
+        $sql="INSERT INTO `teacher`(`teacher_id`,`teacher_name`,`teacher_image`, `password`,`email`,`phone`,`address`,`courses_teaching`) VALUES ('$teacher_id','$teacher_name','$teacher_image',MD5('$password'),'$email','$phone','$address','".$courses_teaching."')";
       
         $result=mysqli_query($conn,$sql); 
         if($result){
@@ -97,6 +98,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             <div class="inputfield">
                 <label for="">Phone</label>
                 <input type="int" name="phone" class="input" required />
+            </div>
+
+            <div class="inputfield">
+                <label for="">Address</label>
+                <input type="int" name="address" class="input" required />
             </div>
 
             <div class="container1">
