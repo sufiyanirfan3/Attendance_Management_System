@@ -77,7 +77,7 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
     <a href="teacher_profile.php" style="text-decoration:none">
       <div class="box1">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/admin.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/user.svg">
         </div>
         <div class="left-box">
             <h4>Profile</h4>      
@@ -87,7 +87,7 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
           <a href="edit_teacher.php?teacher_id=<?php echo $_SESSION['teacher_id'];?>" style="text-decoration:none">
       <div class="box2">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/edit-profile.svg">
         </div>
         <div class="left-box">
         <h4>Edit Profile</h4>   
@@ -98,7 +98,7 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
           <a href="tcourses.php" style="text-decoration:none">
       <div class="box3">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/teacher.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/book.svg">
         </div>
         <div class="left-box">
         <h4>Courses Offered</h4> 
@@ -109,7 +109,7 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
           <a href="teacher_mark_attendance.php" style="text-decoration:none">
       <div class="box4">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/book.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/mark.svg">
         </div>
         <div class="left-box">
         <h4>Mark Attendance</h4> 
@@ -121,7 +121,7 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
     <a href="view_attendance.php" style="text-decoration:none">
       <div class="box5">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/attendance.svg">
         </div>
         <div class="left-box">
           <h4>View Attendance</h4>
@@ -132,7 +132,7 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
     <a href="view_student_attendance.php" style="text-decoration:none">
       <div class="box6">
         <div class="right-box">
-        <img class="sidebar-icon" src="../sidebar-icons/student.svg">
+        <img class="sidebar-icon" src="../sidebar-icons/attendance.svg">
         </div>
         <div class="left-box">
           <h4>Student Attendance</h4>
