@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <a href="#developers">Developers</a>
         <a href="#contact">Contact</a>
         <a href="login.php">Login</a>       
-        <img src="moon.svg" id="icon">
+        <img src="frontend-images/moon.svg" id="icon">
         <span id="main-span">
           <img src="frontend-images/palette.svg" id="icon">
           <ul>
@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         </div>
         <div class="column col-right reveal">
           <div class="img-card">
-            <img src="hero-banner.png" alt="">
+            <img src="frontend-images/hero-banner.png" alt="">
           </div>
         </div>
         
