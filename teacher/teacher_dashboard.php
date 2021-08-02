@@ -200,14 +200,15 @@ $sa='';
  }
  ?>
  <?php
+ $teacher_id = $_SESSION['teacher_id'];
 $ta='';
- $sql="SELECT COUNT(attendance_status) from `teacher_attendance` where attendance_status='Absent' ";
+ $sql="SELECT COUNT(attendance_status) from `teacher_attendance` where teacher_id='$teacher_id' and attendance_status='Absent' ";
  $run=mysqli_query($conn,$sql);
  while($row_user=mysqli_fetch_array($run)){
    $ta.=$row_user['COUNT(attendance_status)'];
  }
  $tp='';
- $sql="SELECT COUNT(attendance_status) from `teacher_attendance` where attendance_status='Present' ";
+ $sql="SELECT COUNT(attendance_status) from `teacher_attendance` where teacher_id='$teacher_id' and attendance_status='Present' ";
  $run=mysqli_query($conn,$sql);
  while($row_user=mysqli_fetch_array($run)){
    $tp.=$row_user['COUNT(attendance_status)'];
