@@ -20,7 +20,7 @@
 .container .card1 .face-img{
     width: 450px;
     height: 450px;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .container .card2{
     display: flex;

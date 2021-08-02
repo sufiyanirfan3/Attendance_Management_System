@@ -24,7 +24,7 @@ function open_script(){
 </script> 
 <div class="container">
 <div class="card1">
-    <img class="face-img" src="facerecognition1.gif">
+    <img class="face-img" src="../facerecognition1.gif">
     </div>
     <div class="card2">
 <input class="mark-btn" type="button" value="Mark Attendance" <?php if ($date == date("Y-m-d") && $status=="Present"){ ?> disabled <?php   } ?> onclick="open_script()" />

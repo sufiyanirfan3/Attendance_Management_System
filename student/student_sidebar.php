@@ -12,7 +12,7 @@
 <body>
   <div class="sidebar">
     <div class="logo-details">
-    <img class="sidebar-icon" src="../sidebar-icons/face-recognition.svg">
+    <img style="filter:invert(1);margin-left:15px;margin-right:20px;"src="../sidebar-icons/face-recognition.svg" width=30px height=30px>
       <span class="logo_name">Attendee</span>
     </div>
       <ul class="nav-links">

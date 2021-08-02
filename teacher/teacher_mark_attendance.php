@@ -15,7 +15,7 @@ while($row_user=mysqli_fetch_array($run)){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+    <link rel="stylesheet" href="teacher_mark_attendance.css">
     <title>Document</title>
 </head>
 <body>
@@ -25,8 +25,15 @@ function open_script(){
 } 
 </script> 
 
-<input type="button" value="Mark Attendance" <?php if ($date == date("Y-m-d") && $status=="Present"){ ?> disabled <?php   } ?> onclick="open_script()" />
-
+<div class="container">
+<div class="card1">
+    <img class="face-img" src="../facerecognition1.gif">
+    </div>
+    <div class="card2">
+<input class="mark-btn" type="button" value="Mark Attendance" <?php if ($date == date("Y-m-d") && $status=="Present"){ ?> disabled <?php   } ?> onclick="open_script()" />
+<a href="student_dashboard.php"><input type="image" class="home-img" src="../home.svg" width=36px height=36px></a>
+</div>
+</div>
 
 
 </body>

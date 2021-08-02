@@ -74,27 +74,23 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
 <div class="main-container">
     <div class="big-box">
 
-    <a href="admin_profile.php" style="text-decoration:none">
+    <a href="teacher_profile.php" style="text-decoration:none">
       <div class="box1">
         <div class="right-box">
         <img class="sidebar-icon" src="../sidebar-icons/admin.svg">
         </div>
         <div class="left-box">
-            <h4>Profile</h4>
-         
+            <h4>Profile</h4>      
         </div>
       </div>
           </a>
-
           <a href="edit_teacher.php?teacher_id=<?php echo $_SESSION['teacher_id'];?>" style="text-decoration:none">
       <div class="box2">
         <div class="right-box">
         <img class="sidebar-icon" src="../sidebar-icons/student.svg">
         </div>
         <div class="left-box">
-      
-        <h4>Edit Profile</h4>
-      
+        <h4>Edit Profile</h4>   
         </div>
       </div>
           </a>
@@ -105,8 +101,7 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
         <img class="sidebar-icon" src="../sidebar-icons/teacher.svg">
         </div>
         <div class="left-box">
-        <h4>Courses Offered</h4>
-  
+        <h4>Courses Offered</h4> 
         </div>
       </div>
           </a>
@@ -117,11 +112,9 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
         <img class="sidebar-icon" src="../sidebar-icons/book.svg">
         </div>
         <div class="left-box">
-        <h4>Mark Attendance</h4>
-  
+        <h4>Mark Attendance</h4> 
         </div>
       </div>
- 
           </a>
 
 
@@ -178,7 +171,6 @@ if(file_get_contents("teacher_attendance_record/".$a.".txt")){
     <div class="pie-box" id="pie2Container">
     </div>
     </div>
-
     </div>
     <section>
   
@@ -241,7 +233,7 @@ fontSize: 18
    type: "doughnut",
    dataPoints: [
    {  y: <?php echo $sa ?>, legendText: "Absent", color: "RoyalBlue" },
-   {  y: <?php echo $sp ?>, legendText: "Present", color: "#ffa703" }
+   {  y: <?php echo $sp ?>, legendText: "Present", color: "#1abc9c" }
    ]
  }
  ]
@@ -269,7 +261,7 @@ chart1.render();
        type: "doughnut",
        dataPoints: [
        {  y: <?php echo $ta ?>, legendText: "Absent", color: "RoyalBlue" },
-       {  y: <?php echo $tp ?>, legendText: "Present", color: "#ffa703" }
+       {  y: <?php echo $tp ?>, legendText: "Present", color: "#1abc9c"}
        ]
      }
      ]

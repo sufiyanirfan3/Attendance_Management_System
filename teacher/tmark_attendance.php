@@ -35,15 +35,17 @@
 
     <style>
         button{
-            margin-bottom:20px;
-            background-color:green;
-            color:white;
-            position:400px;
-            border:8px solid green;
-            border-radius:10px;
-            width:100px;
-            height 100px;
-           
+            background-color:#fff;
+            color: #1abc9c;
+            border: 2px solid #1abc9c;
+            font-weight:500;
+            font-size: 16px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            padding: 6px;
+            width: 100px;
+            cursor: pointer;
+
         }
         body {
             margin: 0;

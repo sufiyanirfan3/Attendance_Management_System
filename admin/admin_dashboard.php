@@ -275,7 +275,7 @@ $ta='';
        type: "doughnut",
        dataPoints: [
        {  y: <?php echo $sa ?>, legendText: "Absent", color: "RoyalBlue" },
-       {  y: <?php echo $sp ?>, legendText: "Present", color: "#ffa703" }
+       {  y: <?php echo $sp ?>, legendText: "Present", color:"#1abc9c"}
        ]
      }
      ]
@@ -348,7 +348,7 @@ window.onload = function () {
        type: "doughnut",
        dataPoints: [
        {  y: <?php echo $ta ?>, legendText: "Absent", color: "RoyalBlue" },
-       {  y: <?php echo $tp ?>, legendText: "Present", color: "#ffa703" }
+       {  y: <?php echo $tp ?>, legendText: "Present", color: "#1abc9c" }
        ]
      }
      ]
