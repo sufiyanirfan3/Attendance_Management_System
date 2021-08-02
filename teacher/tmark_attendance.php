@@ -15,10 +15,8 @@
     if(isset($_POST['submit']))
     {    
         $myfile1 = fopen("teacher_attendance_record/".$a.".txt", "a") or die("Unable to open file!");  
-        if(file_get_contents("teacher_attendance_record/".$a.".txt")){
-            
-            header('location:teacher_dashboard.php');
-            
+        if(file_get_contents("teacher_attendance_record/".$a.".txt")){          
+            header('location:teacher_dashboard.php');          
         }
         else echo "mark attendance first";
     }
@@ -31,7 +29,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Face Recognition</title>
-
 
     <style>
         button{
@@ -57,7 +54,6 @@
             align-items: center;
             flex-direction: column;
         }
-
         canvas {
             position: absolute;
         }

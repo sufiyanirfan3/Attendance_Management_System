@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="teacher_sidebar.css">
+    <link rel="stylesheet" href="teacher_sidebar1.css">
     <link rel="stylesheet" href="teacher_dashboard.css">
 
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
