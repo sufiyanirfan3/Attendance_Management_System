@@ -15,7 +15,6 @@ $row_user=mysqli_fetch_array($run);
   $student_image=$row_user['student_image'];
   $email=$row_user['email'];
   $phone=$row_user['phone'];
-  $address=$row_user['address'];
   $courses_enrolled=$row_user['courses_enrolled'];
  
 ?>
@@ -87,14 +86,7 @@ $row_user=mysqli_fetch_array($run);
               <?php echo $phone?>
             </td>
           </tr>
-
-          <tr>
-            <th>Address</th>
-            <td>
-              <?php echo $address?>
-            </td>
-          </tr>
-
+          
         </table>
 
       </div>
